@@ -15,7 +15,7 @@ Cheat sheet and flashcards for learning Vim, following the structure of [mucsi96
 
 | Category | Cards |
 | --- | --- |
-| Basic Navigation | 26 |
+| Basic Navigation | 29 |
 | Line Operations | 12 |
 | Multi-Cursor Editing | 4 |
 | Visual Block (Column) Editing | 8 |
@@ -24,8 +24,8 @@ Cheat sheet and flashcards for learning Vim, following the structure of [mucsi96
 | Brackets & Text Objects | 8 |
 | Find & Replace | 14 |
 | Rename Variable | 2 |
-| File Switching | 8 |
-| **Total** | **97** |
+| File Switching | 10 |
+| **Total** | **102** |
 
 Expected JSON schema:
 

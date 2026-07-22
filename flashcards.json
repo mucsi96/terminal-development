@@ -2,155 +2,173 @@
   {
     "id": "nav-01",
     "category": "Basic Navigation",
-    "frontText": "**Warm-up challenge:** the arrow keys are forbidden. Move the cursor one character **left**, one line **down**, one line **up**, one character **right** — which four home-row keys?",
-    "backText": "```\nh j k l\n```\n\nLeft, down, up, right — keeps your fingers on the home row.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
+    "frontText": "The arrow keys are forbidden. Move the cursor one character **left** — which home-row key?",
+    "backText": "```\nh\n```\n\nThe leftmost key of the `h j k l` cluster moves left — easy to remember by position.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
   },
   {
     "id": "nav-02",
+    "category": "Basic Navigation",
+    "frontText": "The arrow keys are forbidden. Move the cursor one line **down** — which home-row key?",
+    "backText": "```\nj\n```\n\nMnemonic: `j` dips below the line like an arrow pointing down.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+  },
+  {
+    "id": "nav-03",
+    "category": "Basic Navigation",
+    "frontText": "The arrow keys are forbidden. Move the cursor one line **up** — which home-row key?",
+    "backText": "```\nk\n```\n\nSits next to `j`; up is its counterpart.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+  },
+  {
+    "id": "nav-04",
+    "category": "Basic Navigation",
+    "frontText": "The arrow keys are forbidden. Move the cursor one character **right** — which home-row key?",
+    "backText": "```\nl\n```\n\nThe rightmost key of the `h j k l` cluster moves right.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
+  },
+  {
+    "id": "nav-05",
     "category": "Basic Navigation",
     "frontText": "The cursor sits on the `c` of `const`:\n\n```js\nconst userName = getUser();\n```\n\nLand on the `u` of `userName` in **one keystroke**.",
     "backText": "```\nw\n```\n\nJumps to the start of the next word. Takes a count: `3w` jumps three words.\n\n[Word motions](https://vimhelp.org/motion.txt.html#word-motions)"
   },
   {
-    "id": "nav-03",
+    "id": "nav-06",
     "category": "Basic Navigation",
     "frontText": "The cursor sits on the `u` of `userName`:\n\n```js\nconst userName = getUser();\n```\n\nJump back onto the `c` of `const` in **one keystroke**.",
     "backText": "```\nb\n```\n\nJumps to the start of the previous word — the backward counterpart of `w`.\n\n[Word motions](https://vimhelp.org/motion.txt.html#word-motions)"
   },
   {
-    "id": "nav-04",
+    "id": "nav-07",
     "category": "Basic Navigation",
     "frontText": "The cursor sits on the `u` of `userName`:\n\n```js\nconst userName = getUser();\n```\n\nLand on the **last** character of `userName` (the final `e`) in **one keystroke**.",
     "backText": "```\ne\n```\n\nJumps to the end of the word. Useful with operators: `ce` changes to the end of the word.\n\n[Word motions](https://vimhelp.org/motion.txt.html#word-motions)"
   },
   {
-    "id": "nav-05",
+    "id": "nav-08",
     "category": "Basic Navigation",
     "frontText": "The cursor is in the middle of this indented line:\n\n```js\n        return result;\n```\n\nJump to **column 0** — before the indentation — in one keystroke.",
     "backText": "```\n0\n```\n\nGoes to the very first column, even when the line is indented.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
   },
   {
-    "id": "nav-06",
+    "id": "nav-09",
     "category": "Basic Navigation",
     "frontText": "The cursor is at the **end** of this indented line:\n\n```js\n        return result;\n```\n\nJump onto the `r` of `return` (the first non-blank character) in one keystroke.",
     "backText": "```\n^\n```\n\nFirst non-blank character — usually what you want in indented code, unlike `0`.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
   },
   {
-    "id": "nav-07",
+    "id": "nav-10",
     "category": "Basic Navigation",
     "frontText": "The cursor is at the start of a very long line. Jump to its **last character** in one keystroke.",
     "backText": "```\n$\n```\n\nEnd of line. Combines with operators: `d$` (or `D`) deletes to the end of the line.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
   },
   {
-    "id": "nav-08",
+    "id": "nav-11",
     "category": "Basic Navigation",
     "frontText": "You are on line 500 and need to check the imports at the **top of the file**. Get to line 1.",
     "backText": "```\ngg\n```\n\nFirst line of the file. With a count it jumps to that line (`1G` does the same).\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
   },
   {
-    "id": "nav-09",
+    "id": "nav-12",
     "category": "Basic Navigation",
     "frontText": "You are on line 1 of a 2000-line file. Jump to the **very last line** in one keystroke.",
     "backText": "```\nG\n```\n\nMnemonic: Go to the end.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
   },
   {
-    "id": "nav-10",
+    "id": "nav-13",
     "category": "Basic Navigation",
     "frontText": "The stack trace says:\n\n```\nTypeError at app.js:42\n```\n\n`app.js` is already open. Jump **straight to line 42**.",
     "backText": "```\n42G\n```\n\n`:42` and `42gg` do the same.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
   },
   {
-    "id": "nav-11",
+    "id": "nav-14",
     "category": "Basic Navigation",
     "frontText": "You are in the middle of a function body. Hop **up to the blank line above the function** in one keystroke.",
     "backText": "```\n{\n```\n\nJumps to the previous empty line (paragraph motion) — great for moving between functions.\n\n[Object motions](https://vimhelp.org/motion.txt.html#object-motions)"
   },
   {
-    "id": "nav-12",
+    "id": "nav-15",
     "category": "Basic Navigation",
     "frontText": "You are in the middle of a function body. Hop **down to the next blank line** (past the end of this block) in one keystroke.",
     "backText": "```\n}\n```\n\nJumps to the next empty line — the downward counterpart of `{`.\n\n[Object motions](https://vimhelp.org/motion.txt.html#object-motions)"
   },
   {
-    "id": "nav-13",
+    "id": "nav-16",
     "category": "Basic Navigation",
     "frontText": "Scroll **half a screen down** without losing your reading flow.",
     "backText": "```\nCtrl-d\n```\n\nMnemonic: down. Keeps more visual context than a full-page jump.\n\n[Scrolling](https://vimhelp.org/scroll.txt.html)"
   },
   {
-    "id": "nav-14",
+    "id": "nav-17",
     "category": "Basic Navigation",
     "frontText": "Scroll **half a screen up**.",
     "backText": "```\nCtrl-u\n```\n\nMnemonic: up.\n\n[Scrolling](https://vimhelp.org/scroll.txt.html)"
   },
   {
-    "id": "nav-15",
+    "id": "nav-18",
     "category": "Basic Navigation",
     "frontText": "Skim quickly through a long file: scroll a **full page forward** in one keystroke.",
     "backText": "```\nCtrl-f\n```\n\nMnemonic: forward.\n\n[Scrolling](https://vimhelp.org/scroll.txt.html)"
   },
   {
-    "id": "nav-16",
+    "id": "nav-19",
     "category": "Basic Navigation",
     "frontText": "You skimmed too far: scroll a **full page backward** in one keystroke.",
     "backText": "```\nCtrl-b\n```\n\nMnemonic: backward.\n\n[Scrolling](https://vimhelp.org/scroll.txt.html)"
   },
   {
-    "id": "nav-17",
+    "id": "nav-20",
     "category": "Basic Navigation",
     "frontText": "**Without scrolling the view**, move the cursor to the **topmost visible line** of the window.",
     "backText": "```\nH\n```\n\nMnemonic: High. Moves the cursor, not the view.\n\n[Various motions](https://vimhelp.org/motion.txt.html#various-motions)"
   },
   {
-    "id": "nav-18",
+    "id": "nav-21",
     "category": "Basic Navigation",
     "frontText": "**Without scrolling the view**, move the cursor to the **middle visible line** of the window.",
     "backText": "```\nM\n```\n\nMnemonic: Middle.\n\n[Various motions](https://vimhelp.org/motion.txt.html#various-motions)"
   },
   {
-    "id": "nav-19",
+    "id": "nav-22",
     "category": "Basic Navigation",
     "frontText": "**Without scrolling the view**, move the cursor to the **bottom visible line** of the window.",
     "backText": "```\nL\n```\n\nMnemonic: Low.\n\n[Various motions](https://vimhelp.org/motion.txt.html#various-motions)"
   },
   {
-    "id": "nav-20",
+    "id": "nav-23",
     "category": "Basic Navigation",
     "frontText": "The line you're editing is stuck at the very **bottom edge** of the window and you can't see what follows. **Center it on the screen** without moving the cursor off it.",
     "backText": "```\nzz\n```\n\n`zt` scrolls the current line to the top, `zb` to the bottom.\n\n[Scrolling relative to cursor](https://vimhelp.org/scroll.txt.html#scroll-cursor)"
   },
   {
-    "id": "nav-21",
+    "id": "nav-24",
     "category": "Basic Navigation",
     "frontText": "The cursor is at the start of this line:\n\n```js\nconst result = compute(value);\n```\n\nJump **directly onto the `=`** with two keystrokes.",
     "backText": "```\nf=\n```\n\n`f` + any character jumps onto its next occurrence in the line. `F=` searches backward, `t=` stops just before it. Combines with operators: `df=`.\n\n[f motion](https://vimhelp.org/motion.txt.html#f)"
   },
   {
-    "id": "nav-22",
+    "id": "nav-25",
     "category": "Basic Navigation",
     "frontText": "You pressed `f,` and landed on the **first comma** of:\n\n```js\nadd(first, second, third)\n```\n\nGet to the **second comma** with **one keystroke**.",
     "backText": "```\n;\n```\n\nRepeats the last `f`/`F`/`t`/`T` jump. Press repeatedly to keep hopping.\n\n[; motion](https://vimhelp.org/motion.txt.html#%3B)"
   },
   {
-    "id": "nav-23",
+    "id": "nav-26",
     "category": "Basic Navigation",
     "frontText": "You pressed `;` once too many and **overshot the comma** you wanted. Step **back one occurrence** with one keystroke.",
     "backText": "```\n,\n```\n\nRepeats the last `f`/`F`/`t`/`T` jump in the opposite direction.\n\n[, motion](https://vimhelp.org/motion.txt.html#%2C)"
   },
   {
-    "id": "nav-24",
+    "id": "nav-27",
     "category": "Basic Navigation",
     "frontText": "You were editing line 812, pressed `gg` to peek at the imports — now **jump back to exactly where you were**.",
     "backText": "```\nCtrl-o\n```\n\nMnemonic: older position in the jump list. Press repeatedly to go further back.\n\n[Jump motions](https://vimhelp.org/motion.txt.html#jump-motions)"
   },
   {
-    "id": "nav-25",
+    "id": "nav-28",
     "category": "Basic Navigation",
     "frontText": "You pressed `Ctrl-o` one time too many and went too far back in the jump history. Go **forward** again with one keystroke.",
     "backText": "```\nCtrl-i\n```\n\nSame key as `Tab` — the counterpart of `Ctrl-o`.\n\n[Jump motions](https://vimhelp.org/motion.txt.html#jump-motions)"
   },
   {
-    "id": "nav-26",
+    "id": "nav-29",
     "category": "Basic Navigation",
     "frontText": "You scrolled far away while reading documentation in the same file. Jump back to **the exact spot of your last edit**.",
     "backText": "```\n`.\n```\n\nBacktick + dot: the `.` mark always holds the position of the most recent change.\n\n[Marks](https://vimhelp.org/motion.txt.html#%60.)"
@@ -248,7 +266,7 @@
   {
     "id": "multi-04",
     "category": "Multi-Cursor Editing",
-    "frontText": "You just did `* cgn newName Esc`. The next occurrence should get **the same replacement** — one keystroke. (And how do you *skip* one?)",
+    "frontText": "You just did `* cgn newName Esc`. The next occurrence should get **the same replacement** — one keystroke.",
     "backText": "```\n.\n```\n\nThe dot command replays the last change on the next match. Press `n` first to skip an occurrence you want to keep.\n\n[Repeating](https://vimhelp.org/repeat.txt.html#single-repeat)"
   },
   {
@@ -578,7 +596,19 @@
   {
     "id": "file-08",
     "category": "File Switching",
-    "frontText": "**Boss challenge (no plugins):** somewhere deep in the project lives `src/user_controller.js`. Open it by typing just a few characters of its name. Which command — and which three `~/.vimrc` options make it work?",
-    "backText": "```vim\n:find usrctl<Tab>\n```\n\nRequires in `~/.vimrc`: `set path+=**` (search recursively), `set wildmenu`, `set wildoptions=fuzzy` (Vim 9 / Neovim).\n\n[:find](https://vimhelp.org/editing.txt.html#%3Afind)"
+    "frontText": "Your `~/.vimrc` already has recursive search and fuzzy completion set up. Somewhere deep in the project lives `src/user_controller.js` — open it by typing just a few characters of its name (**no plugins**).",
+    "backText": "```vim\n:find usrctl<Tab>\n```\n\n`:find` searches every directory in `path`; with fuzzy completion a few characters are enough to match the file.\n\n[:find](https://vimhelp.org/editing.txt.html#%3Afind)"
+  },
+  {
+    "id": "file-09",
+    "category": "File Switching",
+    "frontText": "**Config challenge:** `:find format.js` fails because the file is deep in a subdirectory. Which single option makes `:find` search the **whole project tree recursively**?",
+    "backText": "```vim\nset path+=**\n```\n\n`**` matches any number of directory levels, so `:find` (and `gf`) can locate files anywhere below the current directory.\n\n['path'](https://vimhelp.org/options.txt.html#%27path%27)"
+  },
+  {
+    "id": "file-10",
+    "category": "File Switching",
+    "frontText": "**Config challenge:** make command-line completion match **fuzzily**, so `:find usrctl<Tab>` completes to `user_controller.js` (Vim 9 / Neovim).",
+    "backText": "```vim\nset wildoptions=fuzzy\n```\n\nPair it with `set wildmenu` for the visual completion menu.\n\n['wildoptions'](https://vimhelp.org/options.txt.html#%27wildoptions%27)"
   }
 ]
