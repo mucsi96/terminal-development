@@ -5,7 +5,7 @@ Cheat sheet and flashcards for learning Vim, following the structure of [mucsi96
 ## Files
 
 - **[vim-cheat-sheet.md](vim-cheat-sheet.md)** — printable Vim cheat sheet in markdown, easy to convert to PDF (pandoc commands included at the bottom of the sheet).
-- **[flashcards.json](flashcards.json)** — atomic flashcards derived from the cheat sheet: one card = one answer, so every card can be answered instantly with a single shortcut or command. Only stock Vim/Neovim commands — cards requiring plugin installation (vim-visual-multi, fzf.vim, Telescope, LSP rename) are intentionally excluded. Each card has:
+- **[flashcards.json](flashcards.json)** — atomic, game-style flashcards derived from the cheat sheet. Each front is a small concrete challenge (a code snippet, a cursor position, a goal); each card has exactly one answer — a single shortcut or command. Only stock Vim/Neovim commands — cards requiring plugin installation (vim-visual-multi, fzf.vim, Telescope, LSP rename) are intentionally excluded. Each card has:
   - `frontText` — task description (markdown)
   - `backText` — the keys/command to use, a short description, and a link to the Vim reference docs (markdown)
   - `category` — the cheat sheet topic the card belongs to
