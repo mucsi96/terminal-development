@@ -51,6 +51,12 @@
           default = mkPdf "vim-cheat-sheet-pdf"
             ''-V geometry:margin=1.5cm -V fontsize=10pt'';
 
+          # nix shell .#tools → pandoc + xelatex + fonts on PATH
+          tools = pkgs.buildEnv {
+            name = "vim-cheat-sheet-tools";
+            paths = [ pkgs.pandoc tex pkgs.dejavu_fonts ];
+          };
+
           # nix build .#compact → landscape with tight margins for a denser printout
           compact = mkPdf "vim-cheat-sheet-pdf-compact"
             ''-V geometry:landscape,margin=1cm -V fontsize=9pt'';
