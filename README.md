@@ -2,6 +2,18 @@
 
 Cheat sheet and flashcards for learning Vim, following the structure of [mucsi96/ckad](https://github.com/mucsi96/ckad).
 
+## Building the PDF
+
+The repo ships a Nix flake with the full toolchain (pandoc + XeLaTeX + fonts), so on WSL/Linux/macOS with [Nix installed](https://nixos.org/download/):
+
+```sh
+nix build                 # → result/vim-cheat-sheet.pdf
+nix build .#compact       # landscape variant with tight margins
+nix develop               # shell with pandoc + LaTeX for manual runs
+```
+
+See the bottom of [vim-cheat-sheet.md](vim-cheat-sheet.md) for non-Nix alternatives.
+
 ## Files
 
 - **[vim-cheat-sheet.md](vim-cheat-sheet.md)** — printable Vim cheat sheet in markdown, easy to convert to PDF (pandoc commands included at the bottom of the sheet).
