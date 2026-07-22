@@ -1,0 +1,614 @@
+[
+  {
+    "id": "nav-01",
+    "category": "Basic Navigation",
+    "frontText": "The arrow keys are forbidden. Move the cursor one character **left** — which home-row key?",
+    "backText": "```\nh\n```\n\nThe leftmost key of the `h j k l` cluster moves left — easy to remember by position.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
+  },
+  {
+    "id": "nav-02",
+    "category": "Basic Navigation",
+    "frontText": "The arrow keys are forbidden. Move the cursor one line **down** — which home-row key?",
+    "backText": "```\nj\n```\n\nMnemonic: `j` dips below the line like an arrow pointing down.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+  },
+  {
+    "id": "nav-03",
+    "category": "Basic Navigation",
+    "frontText": "The arrow keys are forbidden. Move the cursor one line **up** — which home-row key?",
+    "backText": "```\nk\n```\n\nSits next to `j`; up is its counterpart.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+  },
+  {
+    "id": "nav-04",
+    "category": "Basic Navigation",
+    "frontText": "The arrow keys are forbidden. Move the cursor one character **right** — which home-row key?",
+    "backText": "```\nl\n```\n\nThe rightmost key of the `h j k l` cluster moves right.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
+  },
+  {
+    "id": "nav-05",
+    "category": "Basic Navigation",
+    "frontText": "The cursor sits on the `c` of `const`:\n\n```js\nconst userName = getUser();\n```\n\nLand on the `u` of `userName` in **one keystroke**.",
+    "backText": "```\nw\n```\n\nJumps to the start of the next word. Takes a count: `3w` jumps three words.\n\n[Word motions](https://vimhelp.org/motion.txt.html#word-motions)"
+  },
+  {
+    "id": "nav-06",
+    "category": "Basic Navigation",
+    "frontText": "The cursor sits on the `u` of `userName`:\n\n```js\nconst userName = getUser();\n```\n\nJump back onto the `c` of `const` in **one keystroke**.",
+    "backText": "```\nb\n```\n\nJumps to the start of the previous word — the backward counterpart of `w`.\n\n[Word motions](https://vimhelp.org/motion.txt.html#word-motions)"
+  },
+  {
+    "id": "nav-07",
+    "category": "Basic Navigation",
+    "frontText": "The cursor sits on the `u` of `userName`:\n\n```js\nconst userName = getUser();\n```\n\nLand on the **last** character of `userName` (the final `e`) in **one keystroke**.",
+    "backText": "```\ne\n```\n\nJumps to the end of the word. Useful with operators: `ce` changes to the end of the word.\n\n[Word motions](https://vimhelp.org/motion.txt.html#word-motions)"
+  },
+  {
+    "id": "nav-08",
+    "category": "Basic Navigation",
+    "frontText": "The cursor is in the middle of this indented line:\n\n```js\n        return result;\n```\n\nJump to **column 0** — before the indentation — in one keystroke.",
+    "backText": "```\n0\n```\n\nGoes to the very first column, even when the line is indented.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
+  },
+  {
+    "id": "nav-09",
+    "category": "Basic Navigation",
+    "frontText": "The cursor is at the **end** of this indented line:\n\n```js\n        return result;\n```\n\nJump onto the `r` of `return` (the first non-blank character) in one keystroke.",
+    "backText": "```\n^\n```\n\nFirst non-blank character — usually what you want in indented code, unlike `0`.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
+  },
+  {
+    "id": "nav-10",
+    "category": "Basic Navigation",
+    "frontText": "The cursor is at the start of a very long line. Jump to its **last character** in one keystroke.",
+    "backText": "```\n$\n```\n\nEnd of line. Combines with operators: `d$` (or `D`) deletes to the end of the line.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
+  },
+  {
+    "id": "nav-11",
+    "category": "Basic Navigation",
+    "frontText": "You are on line 500 and need to check the imports at the **top of the file**. Get to line 1.",
+    "backText": "```\ngg\n```\n\nFirst line of the file. With a count it jumps to that line (`1G` does the same).\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+  },
+  {
+    "id": "nav-12",
+    "category": "Basic Navigation",
+    "frontText": "You are on line 1 of a 2000-line file. Jump to the **very last line** in one keystroke.",
+    "backText": "```\nG\n```\n\nMnemonic: Go to the end.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+  },
+  {
+    "id": "nav-13",
+    "category": "Basic Navigation",
+    "frontText": "The stack trace says:\n\n```\nTypeError at app.js:42\n```\n\n`app.js` is already open. Jump **straight to line 42**.",
+    "backText": "```\n42G\n```\n\n`:42` and `42gg` do the same.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+  },
+  {
+    "id": "nav-14",
+    "category": "Basic Navigation",
+    "frontText": "You are in the middle of a function body. Hop **up to the blank line above the function** in one keystroke.",
+    "backText": "```\n{\n```\n\nJumps to the previous empty line (paragraph motion) — great for moving between functions.\n\n[Object motions](https://vimhelp.org/motion.txt.html#object-motions)"
+  },
+  {
+    "id": "nav-15",
+    "category": "Basic Navigation",
+    "frontText": "You are in the middle of a function body. Hop **down to the next blank line** (past the end of this block) in one keystroke.",
+    "backText": "```\n}\n```\n\nJumps to the next empty line — the downward counterpart of `{`.\n\n[Object motions](https://vimhelp.org/motion.txt.html#object-motions)"
+  },
+  {
+    "id": "nav-16",
+    "category": "Basic Navigation",
+    "frontText": "Scroll **half a screen down** without losing your reading flow.",
+    "backText": "```\nCtrl-d\n```\n\nMnemonic: down. Keeps more visual context than a full-page jump.\n\n[Scrolling](https://vimhelp.org/scroll.txt.html)"
+  },
+  {
+    "id": "nav-17",
+    "category": "Basic Navigation",
+    "frontText": "Scroll **half a screen up**.",
+    "backText": "```\nCtrl-u\n```\n\nMnemonic: up.\n\n[Scrolling](https://vimhelp.org/scroll.txt.html)"
+  },
+  {
+    "id": "nav-18",
+    "category": "Basic Navigation",
+    "frontText": "Skim quickly through a long file: scroll a **full page forward** in one keystroke.",
+    "backText": "```\nCtrl-f\n```\n\nMnemonic: forward.\n\n[Scrolling](https://vimhelp.org/scroll.txt.html)"
+  },
+  {
+    "id": "nav-19",
+    "category": "Basic Navigation",
+    "frontText": "You skimmed too far: scroll a **full page backward** in one keystroke.",
+    "backText": "```\nCtrl-b\n```\n\nMnemonic: backward.\n\n[Scrolling](https://vimhelp.org/scroll.txt.html)"
+  },
+  {
+    "id": "nav-20",
+    "category": "Basic Navigation",
+    "frontText": "**Without scrolling the view**, move the cursor to the **topmost visible line** of the window.",
+    "backText": "```\nH\n```\n\nMnemonic: High. Moves the cursor, not the view.\n\n[Various motions](https://vimhelp.org/motion.txt.html#various-motions)"
+  },
+  {
+    "id": "nav-21",
+    "category": "Basic Navigation",
+    "frontText": "**Without scrolling the view**, move the cursor to the **middle visible line** of the window.",
+    "backText": "```\nM\n```\n\nMnemonic: Middle.\n\n[Various motions](https://vimhelp.org/motion.txt.html#various-motions)"
+  },
+  {
+    "id": "nav-22",
+    "category": "Basic Navigation",
+    "frontText": "**Without scrolling the view**, move the cursor to the **bottom visible line** of the window.",
+    "backText": "```\nL\n```\n\nMnemonic: Low.\n\n[Various motions](https://vimhelp.org/motion.txt.html#various-motions)"
+  },
+  {
+    "id": "nav-23",
+    "category": "Basic Navigation",
+    "frontText": "The line you're editing is stuck at the very **bottom edge** of the window and you can't see what follows. **Center it on the screen** without moving the cursor off it.",
+    "backText": "```\nzz\n```\n\n`zt` scrolls the current line to the top, `zb` to the bottom.\n\n[Scrolling relative to cursor](https://vimhelp.org/scroll.txt.html#scroll-cursor)"
+  },
+  {
+    "id": "nav-24",
+    "category": "Basic Navigation",
+    "frontText": "The cursor is at the start of this line:\n\n```js\nconst result = compute(value);\n```\n\nJump **directly onto the `=`** with two keystrokes.",
+    "backText": "```\nf=\n```\n\n`f` + any character jumps onto its next occurrence in the line. `F=` searches backward, `t=` stops just before it. Combines with operators: `df=`.\n\n[f motion](https://vimhelp.org/motion.txt.html#f)"
+  },
+  {
+    "id": "nav-25",
+    "category": "Basic Navigation",
+    "frontText": "You pressed `f,` and landed on the **first comma** of:\n\n```js\nadd(first, second, third)\n```\n\nGet to the **second comma** with **one keystroke**.",
+    "backText": "```\n;\n```\n\nRepeats the last `f`/`F`/`t`/`T` jump. Press repeatedly to keep hopping.\n\n[; motion](https://vimhelp.org/motion.txt.html#%3B)"
+  },
+  {
+    "id": "nav-26",
+    "category": "Basic Navigation",
+    "frontText": "You pressed `;` once too many and **overshot the comma** you wanted. Step **back one occurrence** with one keystroke.",
+    "backText": "```\n,\n```\n\nRepeats the last `f`/`F`/`t`/`T` jump in the opposite direction.\n\n[, motion](https://vimhelp.org/motion.txt.html#%2C)"
+  },
+  {
+    "id": "nav-27",
+    "category": "Basic Navigation",
+    "frontText": "You were editing line 812, pressed `gg` to peek at the imports — now **jump back to exactly where you were**.",
+    "backText": "```\nCtrl-o\n```\n\nMnemonic: older position in the jump list. Press repeatedly to go further back.\n\n[Jump motions](https://vimhelp.org/motion.txt.html#jump-motions)"
+  },
+  {
+    "id": "nav-28",
+    "category": "Basic Navigation",
+    "frontText": "You pressed `Ctrl-o` one time too many and went too far back in the jump history. Go **forward** again with one keystroke.",
+    "backText": "```\nCtrl-i\n```\n\nSame key as `Tab` — the counterpart of `Ctrl-o`.\n\n[Jump motions](https://vimhelp.org/motion.txt.html#jump-motions)"
+  },
+  {
+    "id": "nav-29",
+    "category": "Basic Navigation",
+    "frontText": "You scrolled far away while reading documentation in the same file. Jump back to **the exact spot of your last edit**.",
+    "backText": "```\n`.\n```\n\nBacktick + dot: the `.` mark always holds the position of the most recent change.\n\n[Marks](https://vimhelp.org/motion.txt.html#%60.)"
+  },
+  {
+    "id": "line-01",
+    "category": "Line Operations",
+    "frontText": "Delete this leftover debug line **entirely** (the whole line, not just its text):\n\n```js\nconsole.log('debug');\n```",
+    "backText": "```\ndd\n```\n\nThe line goes into the unnamed register — `p` afterwards pastes it, so `dd` + `p` moves a line.\n\n[dd](https://vimhelp.org/change.txt.html#dd)"
+  },
+  {
+    "id": "line-02",
+    "category": "Line Operations",
+    "frontText": "The cursor is on the first of these three obsolete lines — remove **all three** with a single command:\n\n```js\nconsole.log(a);\nconsole.log(b);\nconsole.log(c);\n```",
+    "backText": "```\n3dd\n```\n\nAny count works — `10dd` deletes ten lines.\n\n[dd](https://vimhelp.org/change.txt.html#dd)"
+  },
+  {
+    "id": "line-03",
+    "category": "Line Operations",
+    "frontText": "The cursor is on the space right before the comment:\n\n```js\nlet x = 5; // TODO: remove this\n```\n\nDelete **from the cursor to the end of the line** in one keystroke.",
+    "backText": "```\nD\n```\n\nShorthand for `d$`. `C` does the same but leaves you in Insert mode.\n\n[D](https://vimhelp.org/change.txt.html#D)"
+  },
+  {
+    "id": "line-04",
+    "category": "Line Operations",
+    "frontText": "Add a new statement **below** the current line — open the line and be ready to type, in one keystroke.",
+    "backText": "```\no\n```\n\nMnemonic: open. Respects the surrounding auto-indentation.\n\n[o](https://vimhelp.org/insert.txt.html#o)"
+  },
+  {
+    "id": "line-05",
+    "category": "Line Operations",
+    "frontText": "You're on the first line of the file and need to add a missing import **above** it — open a line above and be ready to type, in one keystroke.",
+    "backText": "```\nO\n```\n\nCapital `o` — opens the line above the cursor.\n\n[O](https://vimhelp.org/insert.txt.html#O)"
+  },
+  {
+    "id": "line-06",
+    "category": "Line Operations",
+    "frontText": "**Copy the current line** (you'll paste it elsewhere in a moment).",
+    "backText": "```\nyy\n```\n\n`3yy` yanks three lines. `yyp` duplicates the current line.\n\n[yy](https://vimhelp.org/change.txt.html#yy)"
+  },
+  {
+    "id": "line-07",
+    "category": "Line Operations",
+    "frontText": "You copied a line with `yy` and moved to the target spot. **Paste it below** the current line.",
+    "backText": "```\np\n```\n\nFor line-wise yanks (`yy`, `dd`, `V`+`y`) the text is inserted on a new line below.\n\n[p](https://vimhelp.org/change.txt.html#p)"
+  },
+  {
+    "id": "line-08",
+    "category": "Line Operations",
+    "frontText": "Same situation, but the copied line must land **above** the current line. Which keystroke?",
+    "backText": "```\nP\n```\n\nCapital `p` — inserts before/above instead of after/below.\n\n[P](https://vimhelp.org/change.txt.html#P)"
+  },
+  {
+    "id": "line-09",
+    "category": "Line Operations",
+    "frontText": "The cursor is on the first line. Merge the two lines into one with a **single keystroke**:\n\n```js\nconst greeting =\n    'hello world';\n```",
+    "backText": "```\nJ\n```\n\nJoins with a single space at the seam; `gJ` joins without the space; `3J` joins three lines.\n\n[J](https://vimhelp.org/change.txt.html#J)"
+  },
+  {
+    "id": "line-10",
+    "category": "Line Operations",
+    "frontText": "**Challenge:** copy these three validation lines and insert the copy **after** the closing brace of the function below them. Describe the full key sequence:\n\n```js\nif (!user) throw Error();\nif (!user.id) throw Error();\nif (!user.name) throw Error();\n```",
+    "backText": "```\nV j j  y   →  move to the closing brace  →  p\n```\n\nLine-wise Visual select, yank, then paste below the target line. Use `d` instead of `y` to move instead of copy.\n\n[Visual mode](https://vimhelp.org/visual.txt.html)"
+  },
+  {
+    "id": "line-11",
+    "category": "Line Operations",
+    "frontText": "Lines **5–9** contain a config block you need duplicated **after line 20** — do it with a **single Ex command**, no Visual mode, no yanking.",
+    "backText": "```vim\n:5,9t20\n```\n\n`:t` copies a range after the target line. `.` = current line, `$` = last line.\n\n[:copy](https://vimhelp.org/change.txt.html#%3At)"
+  },
+  {
+    "id": "line-12",
+    "category": "Line Operations",
+    "frontText": "Same block, but this time **move** lines 5–9 after line 20 (don't leave the original behind) — one Ex command.",
+    "backText": "```vim\n:5,9m20\n```\n\nLike `:t` but moves instead of copying.\n\n[:move](https://vimhelp.org/change.txt.html#%3Am)"
+  },
+  {
+    "id": "multi-01",
+    "category": "Multi-Cursor Editing",
+    "frontText": "The cursor is somewhere on `count`:\n\n```js\ncount += 1;\n```\n\nSearch for **every whole-word occurrence** of `count` in the file with a **single keystroke** (no typing the word).",
+    "backText": "```\n*\n```\n\nSearches forward for the word under the cursor, whole words only. `n`/`N` step through the results; `g*` matches partial words too.\n\n[star](https://vimhelp.org/pattern.txt.html#star)"
+  },
+  {
+    "id": "multi-02",
+    "category": "Multi-Cursor Editing",
+    "frontText": "Same setup — cursor on `count` — but you want to search **backward** (the earlier occurrences). One keystroke.",
+    "backText": "```\n#\n```\n\nThe backward counterpart of `*`.\n\n[#](https://vimhelp.org/pattern.txt.html#%23)"
+  },
+  {
+    "id": "multi-03",
+    "category": "Multi-Cursor Editing",
+    "frontText": "You pressed `*` on `oldName`. Now **change the next match** in a way that the edit can be replayed on further matches with `.` — which command starts the change?",
+    "backText": "```\ncgn\n```\n\n`gn` selects the next search match, `c` changes it. Type the replacement, press `Esc` — then `.` repeats it on further matches. This is Vim's plugin-free multi-cursor.\n\n[gn](https://vimhelp.org/visual.txt.html#gn)"
+  },
+  {
+    "id": "multi-04",
+    "category": "Multi-Cursor Editing",
+    "frontText": "You just did `* cgn newName Esc`. The next occurrence should get **the same replacement** — one keystroke.",
+    "backText": "```\n.\n```\n\nThe dot command replays the last change on the next match. Press `n` first to skip an occurrence you want to keep.\n\n[Repeating](https://vimhelp.org/repeat.txt.html#single-repeat)"
+  },
+  {
+    "id": "block-01",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "You need to select a **rectangle**: the first two characters of four consecutive lines (not whole lines!). Which keystroke **starts** this kind of selection?",
+    "backText": "```\nCtrl-v\n```\n\nVisual Block mode selects a rectangle; extend it with `h j k l`, `f<char>`, `$`.\n\n[Visual Block mode](https://vimhelp.org/visual.txt.html#visual-block)"
+  },
+  {
+    "id": "block-02",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "You selected column 0 of these four lines with `Ctrl-v jjj`:\n\n```js\nlet a = 1;\nlet b = 2;\nlet c = 3;\nlet d = 4;\n```\n\n**Comment them all out** by typing `// ` only **once** — which key starts the insert?",
+    "backText": "```\nI\n```\n\nBlock-insert at the left edge: type `// `, press `Esc`, and it appears on every selected line.\n\n[v_b_I](https://vimhelp.org/visual.txt.html#v_b_I)"
+  },
+  {
+    "id": "block-03",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "A block is selected and extended to the line ends with `$`:\n\n```js\nconst a = 1\nconst bb = 22\nconst ccc = 333\n```\n\nAppend a `;` to **every line's end**, typing it only once — which key starts the append?",
+    "backText": "```\nA\n```\n\nBlock-append after the right edge: type `;`, press `Esc`. After `$` the block is \"ragged right\", so `A` appends at each line's own end.\n\n[v_b_A](https://vimhelp.org/visual.txt.html#v_b_A)"
+  },
+  {
+    "id": "block-04",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "Your `Ctrl-v` block needs to reach **the end of every selected line**, but the lines all have **different lengths**. Which keystroke extends the block that way?",
+    "backText": "```\n$\n```\n\nInside Visual Block, `$` makes the block follow each line's actual end — then `A` appends there.\n\n[v_b_$](https://vimhelp.org/visual.txt.html#v_b_%24)"
+  },
+  {
+    "id": "block-05",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "You block-selected the word `left` in the same column of five lines. **Replace it with `right` on all five lines**, typing the new text only once — which key starts it?",
+    "backText": "```\nc\n```\n\nBlock-change: the selection disappears, you type the replacement once, and `Esc` applies it to every line.\n\n[v_b_c](https://vimhelp.org/visual.txt.html#v_b_c)"
+  },
+  {
+    "id": "block-06",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "You block-selected an unwanted column (e.g. leading `> ` quote markers on every line). **Delete the column** on all lines — one keystroke.",
+    "backText": "```\nd\n```\n\n`x` does the same in Visual Block mode.\n\n[v_d](https://vimhelp.org/change.txt.html#v_d)"
+  },
+  {
+    "id": "block-07",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "You block-selected a column of `-` characters. **Overwrite every selected character with `*`** — two keystrokes.",
+    "backText": "```\nr*\n```\n\nIn Visual mode, `r` + any character overwrites the whole selection with that character.\n\n[v_r](https://vimhelp.org/change.txt.html#v_r)"
+  },
+  {
+    "id": "block-08",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "You block-selected the zeros in:\n\n```\nstep 0\nstep 0\nstep 0\n```\n\nTurn them into `1`, `2`, `3` (an increasing sequence) with **one command**.",
+    "backText": "```\ng Ctrl-a\n```\n\nAdds 1 to the first number, 2 to the second, 3 to the third… Plain `Ctrl-a` adds 1 to every number instead.\n\n[v_g_CTRL-A](https://vimhelp.org/change.txt.html#v_g_CTRL-A)"
+  },
+  {
+    "id": "indent-01",
+    "category": "Indentation",
+    "frontText": "This line needs **one more level of indentation**:\n\n```js\nreturn x;\n```\n\nIndent it without entering Insert mode.",
+    "backText": "```\n>>\n```\n\n`3>>` indents three lines; the width comes from `shiftwidth`.\n\n[>>](https://vimhelp.org/change.txt.html#%3E%3E)"
+  },
+  {
+    "id": "indent-02",
+    "category": "Indentation",
+    "frontText": "This line is indented **one level too deep**. Un-indent it without entering Insert mode.",
+    "backText": "```\n<<\n```\n\nThe counterpart of `>>`.\n\n[<<](https://vimhelp.org/change.txt.html#%3C%3C)"
+  },
+  {
+    "id": "indent-03",
+    "category": "Indentation",
+    "frontText": "You selected five lines with `V`. **Indent them all** one level — one keystroke.",
+    "backText": "```\n>\n```\n\n`<` un-indents. The selection collapses afterwards — `gv` reselects it, or press `.` to indent again.\n\n[v_>](https://vimhelp.org/change.txt.html#v_%3E)"
+  },
+  {
+    "id": "indent-04",
+    "category": "Indentation",
+    "frontText": "You indented a selection with `>`, but it needs **one more level** — and the selection is gone. **Bring the exact same selection back** with one command.",
+    "backText": "```\ngv\n```\n\nRestores the previous Visual selection exactly as it was. (Or skip reselecting and just press `.` to repeat the indent.)\n\n[gv](https://vimhelp.org/visual.txt.html#gv)"
+  },
+  {
+    "id": "indent-05",
+    "category": "Indentation",
+    "frontText": "The current line is indented completely wrong. **Fix its indentation automatically** according to the file type's rules.",
+    "backText": "```\n==\n```\n\nIn Visual mode a single `=` auto-indents the selection.\n\n[=](https://vimhelp.org/change.txt.html#%3D)"
+  },
+  {
+    "id": "indent-06",
+    "category": "Indentation",
+    "frontText": "You opened a file whose **entire indentation is mangled**. Re-indent the **whole file** with one command sequence.",
+    "backText": "```\ngg=G\n```\n\nGo to the top (`gg`), auto-indent (`=`) to the end (`G`).\n\n[=](https://vimhelp.org/change.txt.html#%3D)"
+  },
+  {
+    "id": "indent-07",
+    "category": "Indentation",
+    "frontText": "You are **typing in Insert mode**, mid-line, and realize the line needs one more indent level. Indent it **without leaving Insert mode**.",
+    "backText": "```\nCtrl-t\n```\n\nWorks from anywhere in the line.\n\n[i_CTRL-T](https://vimhelp.org/insert.txt.html#i_CTRL-T)"
+  },
+  {
+    "id": "indent-08",
+    "category": "Indentation",
+    "frontText": "Still **in Insert mode**: the line is indented one level too deep. Un-indent it **without leaving Insert mode**.",
+    "backText": "```\nCtrl-d\n```\n\nThe Insert-mode counterpart of `Ctrl-t`.\n\n[i_CTRL-D](https://vimhelp.org/insert.txt.html#i_CTRL-D)"
+  },
+  {
+    "id": "indent-09",
+    "category": "Indentation",
+    "frontText": "**Config challenge:** pressing `Tab` must insert **spaces, never a tab character**. Which option goes in `~/.vimrc`?",
+    "backText": "```vim\nset expandtab\n```\n\nPair with `shiftwidth=4`, `tabstop=4`, `softtabstop=4` for consistent 4-space indentation.\n\n['expandtab'](https://vimhelp.org/options.txt.html#%27expandtab%27)"
+  },
+  {
+    "id": "indent-10",
+    "category": "Indentation",
+    "frontText": "A legacy file **mixes tabs and spaces**. Convert its existing tabs to match your current settings — one command.",
+    "backText": "```vim\n:retab\n```\n\nWith `expandtab` set, this converts all tab characters to spaces.\n\n[:retab](https://vimhelp.org/change.txt.html#%3Aretab)"
+  },
+  {
+    "id": "paste-01",
+    "category": "Pasting Code",
+    "frontText": "You copied a snippet in the **browser** with `Ctrl-C`. Paste it into Vim at the cursor — which register + keystroke?",
+    "backText": "```\n\"+p\n```\n\nThe `+` register is the OS clipboard (needs Neovim or Vim with `+clipboard`). Never causes the indent \"staircase\" that raw terminal paste does.\n\n[quoteplus](https://vimhelp.org/gui_x11.txt.html#quoteplus)"
+  },
+  {
+    "id": "paste-02",
+    "category": "Pasting Code",
+    "frontText": "You visually selected a function and want to **paste it into Slack** afterwards. Copy it to the **system clipboard**.",
+    "backText": "```\n\"+y\n```\n\nSelect first (e.g. `V` + motions), then `\"+y` puts it in the OS clipboard.\n\n[Registers](https://vimhelp.org/change.txt.html#registers)"
+  },
+  {
+    "id": "paste-03",
+    "category": "Pasting Code",
+    "frontText": "On an old Vim over SSH, pasting with the terminal shortcut turns code into a **\"staircase\"** of ever-deeper indentation. What do you run **before pasting** to prevent it?",
+    "backText": "```vim\n:set paste\n```\n\nPaste, then `:set nopaste` to restore. Modern Vim/Neovim with bracketed paste usually makes this unnecessary.\n\n['paste'](https://vimhelp.org/options.txt.html#%27paste%27)"
+  },
+  {
+    "id": "paste-04",
+    "category": "Pasting Code",
+    "frontText": "You yanked a line from a deeply nested block and are pasting it at a **shallower** level. Paste it so its **indentation adapts to the current line** — one command.",
+    "backText": "```\n]p\n```\n\nLike `p`, but re-indents the pasted lines to the current context.\n\n[]p](https://vimhelp.org/change.txt.html#%5Dp)"
+  },
+  {
+    "id": "paste-05",
+    "category": "Pasting Code",
+    "frontText": "**Config challenge:** make **every** `y`, `d` and `p` use the system clipboard automatically — no `\"+` prefix ever again. Which option?",
+    "backText": "```vim\nset clipboard=unnamedplus\n```\n\nGoes in `~/.vimrc`.\n\n['clipboard'](https://vimhelp.org/options.txt.html#%27clipboard%27)"
+  },
+  {
+    "id": "bracket-01",
+    "category": "Brackets & Text Objects",
+    "frontText": "The cursor is on the opening `(` of a long condition:\n\n```js\nif (user && (user.age > 18 || user.verified)) {\n```\n\nJump to **its matching `)`** in one keystroke.",
+    "backText": "```\n%\n```\n\nWorks on `( ) [ ] { }`; the cursor may be on the bracket or before it on the line. `:packadd! matchit` (ships with Vim) extends it to HTML tags and `if/endif`.\n\n[%](https://vimhelp.org/motion.txt.html#%25)"
+  },
+  {
+    "id": "bracket-02",
+    "category": "Brackets & Text Objects",
+    "frontText": "The cursor is **anywhere inside** the parentheses:\n\n```js\ncalculate(a, b, c)\n```\n\nDelete **all three arguments** but keep the parens — one command.",
+    "backText": "```\ndi(\n```\n\n`i(` = \"inner parentheses\". Same pattern for `i{` `i[` `i\"` `i'` `it`.\n\n[Text objects](https://vimhelp.org/motion.txt.html#text-objects)"
+  },
+  {
+    "id": "bracket-03",
+    "category": "Brackets & Text Objects",
+    "frontText": "Same line, cursor inside the parens:\n\n```js\ncalculate(a, b, c)\n```\n\nDelete the arguments **and start typing the new ones immediately** — one command.",
+    "backText": "```\nci(\n```\n\nChange-inner: deletes the contents and enters Insert mode. `ci\"` / `ci'` do the same inside quotes.\n\n[Text objects](https://vimhelp.org/motion.txt.html#text-objects)"
+  },
+  {
+    "id": "bracket-04",
+    "category": "Brackets & Text Objects",
+    "frontText": "Cursor inside the condition:\n\n```js\nif (items.length > 0 && isReady)\n```\n\n**Copy the condition** (everything inside the parens, without them) — one command.",
+    "backText": "```\nyi(\n```\n\nYanks the inner content without the parens themselves.\n\n[Text objects](https://vimhelp.org/motion.txt.html#text-objects)"
+  },
+  {
+    "id": "bracket-05",
+    "category": "Brackets & Text Objects",
+    "frontText": "Cursor inside the parens of:\n\n```js\nwrap((a, b) => a + b)\n```\n\nDelete the argument list **including the parentheses themselves** — one command. (Assume the cursor is inside the *outer* pair.)",
+    "backText": "```\nda(\n```\n\n`a` = around (includes the pair), `i` = inner (contents only).\n\n[Text objects](https://vimhelp.org/motion.txt.html#text-objects)"
+  },
+  {
+    "id": "bracket-06",
+    "category": "Brackets & Text Objects",
+    "frontText": "The cursor is somewhere inside a long function body. **Visually select the whole body** (everything inside its `{ }`) — one command.",
+    "backText": "```\nvi{\n```\n\n`va{` includes the braces. Pressing `i{` again expands to the enclosing block.\n\n[Text objects](https://vimhelp.org/motion.txt.html#text-objects)"
+  },
+  {
+    "id": "bracket-07",
+    "category": "Brackets & Text Objects",
+    "frontText": "You are deep inside nested `if`s and loops. Jump to the `{` that **opens the current block** — one command.",
+    "backText": "```\n[{\n```\n\nJumps to the previous unmatched `{`; repeat to climb further out. `[(` does the same for parens.\n\n[[{](https://vimhelp.org/motion.txt.html#%5B%7B)"
+  },
+  {
+    "id": "bracket-08",
+    "category": "Brackets & Text Objects",
+    "frontText": "Same nested position — now jump to the `}` that **closes the current block**.",
+    "backText": "```\n]}\n```\n\nThe counterpart of `[{`; `])` does the same for parens.\n\n[]}](https://vimhelp.org/motion.txt.html#%5D%7D)"
+  },
+  {
+    "id": "find-01",
+    "category": "Find & Replace",
+    "frontText": "Find the next occurrence of `handleClick` **below** the cursor.",
+    "backText": "```\n/handleClick\n```\n\nPress `Enter`, then `n` for the next match. `set ignorecase smartcase` makes searches case-insensitive unless the pattern has a capital.\n\n[/](https://vimhelp.org/pattern.txt.html#%2F)"
+  },
+  {
+    "id": "find-02",
+    "category": "Find & Replace",
+    "frontText": "Find the nearest occurrence of `handleClick` **above** the cursor.",
+    "backText": "```\n?handleClick\n```\n\nLike `/` but searches upward.\n\n[?](https://vimhelp.org/pattern.txt.html#%3F)"
+  },
+  {
+    "id": "find-03",
+    "category": "Find & Replace",
+    "frontText": "You searched with `/pattern` and are on the first match. Jump to the **next match** — one keystroke.",
+    "backText": "```\nn\n```\n\nRepeats the last search in the same direction.\n\n[n](https://vimhelp.org/pattern.txt.html#n)"
+  },
+  {
+    "id": "find-04",
+    "category": "Find & Replace",
+    "frontText": "You pressed `n` one time too many. Jump back to the **previous match** — one keystroke.",
+    "backText": "```\nN\n```\n\nRepeats the last search in the opposite direction.\n\n[N](https://vimhelp.org/pattern.txt.html#N)"
+  },
+  {
+    "id": "find-05",
+    "category": "Find & Replace",
+    "frontText": "The search is done but every match is **still glowing yellow**. Turn the highlighting off.",
+    "backText": "```vim\n:noh\n```\n\nShort for `:nohlsearch` — highlights return on the next search.\n\n[:nohlsearch](https://vimhelp.org/pattern.txt.html#%3Anohlsearch)"
+  },
+  {
+    "id": "find-06",
+    "category": "Find & Replace",
+    "frontText": "Rename every `fetchData` to `loadData` **in the whole file** — one command.",
+    "backText": "```vim\n:%s/fetchData/loadData/g\n```\n\n`%` = every line, `g` = all matches per line.\n\n[:substitute](https://vimhelp.org/change.txt.html#%3Asubstitute)"
+  },
+  {
+    "id": "find-07",
+    "category": "Find & Replace",
+    "frontText": "Same rename, but some occurrences must stay — Vim should **ask you at every match**. One command.",
+    "backText": "```vim\n:%s/fetchData/loadData/gc\n```\n\nAt each match: `y` yes, `n` no, `a` all remaining, `q` quit.\n\n[:s_flags](https://vimhelp.org/change.txt.html#%3As_flags)"
+  },
+  {
+    "id": "find-08",
+    "category": "Find & Replace",
+    "frontText": "Replace `old` with `new`, but **only between lines 5 and 20**. One command.",
+    "backText": "```vim\n:5,20s/old/new/g\n```\n\nAny range works before `:s` — e.g. `.,+5` for the current and next five lines.\n\n[:substitute](https://vimhelp.org/change.txt.html#%3Asubstitute)"
+  },
+  {
+    "id": "find-09",
+    "category": "Find & Replace",
+    "frontText": "You selected a block of lines with `V`. Replace `old` with `new` **only inside that selection**.",
+    "backText": "```vim\n:'<,'>s/old/new/g\n```\n\nPressing `:` while a selection is active inserts the `'<,'>` range automatically.\n\n[:substitute](https://vimhelp.org/change.txt.html#%3Asubstitute)"
+  },
+  {
+    "id": "find-10",
+    "category": "Find & Replace",
+    "frontText": "Rename the variable `id` to `uuid` in the file — but `identifier` and `valid` must **not** be touched. One command.",
+    "backText": "```vim\n:%s/\\<id\\>/uuid/g\n```\n\n`\\<` and `\\>` anchor to word boundaries — the same anchors `*` adds automatically.\n\n[/\\<](https://vimhelp.org/pattern.txt.html#%2F%5C%3C)"
+  },
+  {
+    "id": "find-11",
+    "category": "Find & Replace",
+    "frontText": "Find every `TODO` across **all files of the project** using only built-in Vim. One command.",
+    "backText": "```vim\n:vimgrep /TODO/ **/*\n```\n\nFills the quickfix list. `:grep -r TODO src/` uses the external grep instead (`set grepprg=rg\\ --vimgrep` for ripgrep).\n\n[:vimgrep](https://vimhelp.org/quickfix.txt.html#%3Avimgrep)"
+  },
+  {
+    "id": "find-12",
+    "category": "Find & Replace",
+    "frontText": "Your `:vimgrep` finished. **Open the list of all matches** in a window you can browse.",
+    "backText": "```vim\n:copen\n```\n\nOpens the quickfix window; `Enter` on a line jumps to that match.\n\n[:copen](https://vimhelp.org/quickfix.txt.html#%3Acopen)"
+  },
+  {
+    "id": "find-13",
+    "category": "Find & Replace",
+    "frontText": "You're fixing quickfix matches one by one. **Jump to the next match** (possibly in another file) — one command.",
+    "backText": "```vim\n:cnext\n```\n\n`:cprev` steps backward. Both move across file boundaries.\n\n[:cnext](https://vimhelp.org/quickfix.txt.html#%3Acnext)"
+  },
+  {
+    "id": "find-14",
+    "category": "Find & Replace",
+    "frontText": "**Boss challenge:** your `:grep` filled the quickfix list with every file containing `oldApi`. Replace `oldApi` with `newApi` in **all of those files** and **save each one** — a single command line.",
+    "backText": "```vim\n:cfdo %s/oldApi/newApi/g | update\n```\n\n`:cfdo` runs the command in each file in the quickfix list; `| update` writes each changed file.\n\n[:cfdo](https://vimhelp.org/quickfix.txt.html#%3Acfdo)"
+  },
+  {
+    "id": "rename-01",
+    "category": "Rename Variable",
+    "frontText": "You pressed `*` on the variable `userId`. Now rename **every whole-word occurrence in the file** to `accountId` — **without typing `userId` again**. One command.",
+    "backText": "```vim\n:%s//accountId/g\n```\n\nAn **empty pattern** reuses the last search — and `*` already added whole-word anchors, so `userId` matches won't leak into `userIdList`.\n\n[:substitute](https://vimhelp.org/change.txt.html#%3Asubstitute)"
+  },
+  {
+    "id": "rename-02",
+    "category": "Rename Variable",
+    "frontText": "The cursor is on a variable used deep inside a function. Jump to **where it was declared** in this scope — one command.",
+    "backText": "```\ngd\n```\n\nMnemonic: goto definition. `gD` searches from the start of the file (global definition).\n\n[gd](https://vimhelp.org/pattern.txt.html#gd)"
+  },
+  {
+    "id": "file-01",
+    "category": "File Switching",
+    "frontText": "You keep bouncing between `user.js` and `user.test.js` (the two most recent files). **Toggle to the other one** with a single keystroke.",
+    "backText": "```\nCtrl-^\n```\n\nAlso written `Ctrl-6`. Switches between the current and the alternate buffer.\n\n[CTRL-^](https://vimhelp.org/editing.txt.html#CTRL-%5E)"
+  },
+  {
+    "id": "file-02",
+    "category": "File Switching",
+    "frontText": "You've opened a dozen files and lost track. **List all open buffers** with their numbers.",
+    "backText": "```vim\n:ls\n```\n\n`%` marks the current buffer, `#` the alternate one.\n\n[:ls](https://vimhelp.org/windows.txt.html#%3Als)"
+  },
+  {
+    "id": "file-03",
+    "category": "File Switching",
+    "frontText": "`user_controller.js` is already open in a buffer. Switch to it by typing only the fragment `ctrl` — which command?",
+    "backText": "```vim\n:b ctrl\n```\n\n`:b` matches any substring of a buffer name; `Tab` cycles through multiple matches.\n\n[:buffer](https://vimhelp.org/windows.txt.html#%3Abuffer)"
+  },
+  {
+    "id": "file-04",
+    "category": "File Switching",
+    "frontText": "Cycle to the **next buffer** in the buffer list.",
+    "backText": "```vim\n:bn\n```\n\nShort for `:bnext`; wraps around at the end of the list.\n\n[:bnext](https://vimhelp.org/windows.txt.html#%3Abnext)"
+  },
+  {
+    "id": "file-05",
+    "category": "File Switching",
+    "frontText": "Cycle to the **previous buffer** in the buffer list.",
+    "backText": "```vim\n:bp\n```\n\nShort for `:bprevious`.\n\n[:bprevious](https://vimhelp.org/windows.txt.html#%3Abprevious)"
+  },
+  {
+    "id": "file-06",
+    "category": "File Switching",
+    "frontText": "You're done with the current file. **Close its buffer** without quitting Vim.",
+    "backText": "```vim\n:bd\n```\n\nShort for `:bdelete` — the file stays on disk, only the buffer is unloaded.\n\n[:bdelete](https://vimhelp.org/windows.txt.html#%3Abdelete)"
+  },
+  {
+    "id": "file-07",
+    "category": "File Switching",
+    "frontText": "Open the file `src/utils/format.js`, using **Tab completion** so you don't type the whole path.",
+    "backText": "```vim\n:e src/ut<Tab>\n```\n\n`:e` (`:edit`) opens a file; `Tab` completes names (`set wildmenu` gives a visual menu). `:e!` reloads the current file, discarding changes.\n\n[:edit](https://vimhelp.org/editing.txt.html#%3Aedit)"
+  },
+  {
+    "id": "file-08",
+    "category": "File Switching",
+    "frontText": "Your `~/.vimrc` already has recursive search and fuzzy completion set up. Somewhere deep in the project lives `src/user_controller.js` — open it by typing just a few characters of its name (**no plugins**).",
+    "backText": "```vim\n:find usrctl<Tab>\n```\n\n`:find` searches every directory in `path`; with fuzzy completion a few characters are enough to match the file.\n\n[:find](https://vimhelp.org/editing.txt.html#%3Afind)"
+  },
+  {
+    "id": "file-09",
+    "category": "File Switching",
+    "frontText": "**Config challenge:** `:find format.js` fails because the file is deep in a subdirectory. Which single option makes `:find` search the **whole project tree recursively**?",
+    "backText": "```vim\nset path+=**\n```\n\n`**` matches any number of directory levels, so `:find` (and `gf`) can locate files anywhere below the current directory.\n\n['path'](https://vimhelp.org/options.txt.html#%27path%27)"
+  },
+  {
+    "id": "file-10",
+    "category": "File Switching",
+    "frontText": "**Config challenge:** make command-line completion match **fuzzily**, so `:find usrctl<Tab>` completes to `user_controller.js` (Vim 9 / Neovim).",
+    "backText": "```vim\nset wildoptions=fuzzy\n```\n\nPair it with `set wildmenu` for the visual completion menu.\n\n['wildoptions'](https://vimhelp.org/options.txt.html#%27wildoptions%27)"
+  }
+]
