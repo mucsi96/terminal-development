@@ -244,11 +244,18 @@ Common mapping: `nnoremap <C-p> :Files<CR>` (or `:Telescope find_files<CR>`), so
 **With the Nix flake in this repo** (works on WSL, Linux, macOS — no manual LaTeX setup):
 
 ```sh
-nix build                 # → result/vim-cheat-sheet.pdf
-nix build .#compact       # landscape, tight margins, for a denser printout
+nix develop               # shell with pandoc + xelatex + fonts
 
-# or enter a shell that has pandoc + LaTeX and run pandoc yourself:
-nix develop
+pandoc vim-cheat-sheet.md -o vim-cheat-sheet.pdf \
+  --pdf-engine=xelatex \
+  -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" \
+  -V geometry:margin=1.5cm -V fontsize=10pt
+
+# landscape with tight margins for a denser printout:
+pandoc vim-cheat-sheet.md -o vim-cheat-sheet.pdf \
+  --pdf-engine=xelatex \
+  -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" \
+  -V geometry:landscape,margin=1cm -V fontsize=9pt
 ```
 
 If flakes aren't enabled yet, either add `experimental-features = nix-command flakes`

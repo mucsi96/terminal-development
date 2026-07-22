@@ -22,44 +22,5 @@
           FONTCONFIG_FILE = pkgs.makeFontsConf { fontDirectories = [ pkgs.dejavu_fonts ]; };
         };
       });
-
-      packages = forAllSystems (pkgs:
-        let
-          tex = pkgs.texliveSmall.withPackages (ps: [ ps.collection-fontsrecommended ]);
-          fontsConf = pkgs.makeFontsConf { fontDirectories = [ pkgs.dejavu_fonts ]; };
-          mkPdf = name: pandocArgs: pkgs.stdenvNoCC.mkDerivation {
-            inherit name;
-            src = ./.;
-            nativeBuildInputs = [ pkgs.pandoc tex ];
-            FONTCONFIG_FILE = fontsConf;
-            buildPhase = ''
-              pandoc vim-cheat-sheet.md -o vim-cheat-sheet.pdf \
-                --pdf-engine=xelatex \
-                -V mainfont="DejaVu Serif" \
-                -V sansfont="DejaVu Sans" \
-                -V monofont="DejaVu Sans Mono" \
-                ${pandocArgs}
-            '';
-            installPhase = ''
-              mkdir -p $out
-              cp vim-cheat-sheet.pdf $out/
-            '';
-          };
-        in
-        {
-          # nix build → result/vim-cheat-sheet.pdf (portrait, A4-ish margins)
-          default = mkPdf "vim-cheat-sheet-pdf"
-            ''-V geometry:margin=1.5cm -V fontsize=10pt'';
-
-          # nix shell .#tools → pandoc + xelatex + fonts on PATH
-          tools = pkgs.buildEnv {
-            name = "vim-cheat-sheet-tools";
-            paths = [ pkgs.pandoc tex pkgs.dejavu_fonts ];
-          };
-
-          # nix build .#compact → landscape with tight margins for a denser printout
-          compact = mkPdf "vim-cheat-sheet-pdf-compact"
-            ''-V geometry:landscape,margin=1cm -V fontsize=9pt'';
-        });
     };
 }
