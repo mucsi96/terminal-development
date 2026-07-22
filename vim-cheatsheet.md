@@ -32,6 +32,55 @@ Move around without leaving the home row.
 
 ---
 
+## Switching Between Files & Fuzzy Finding
+
+### Quick switch between open files (buffers)
+
+Every file you open lives in a **buffer**. Switch without closing anything.
+
+| Command | Action |
+| --- | --- |
+| `:ls` or `:buffers` | List open buffers |
+| `:b {name}` | Switch to buffer by partial name (`Tab` to complete) |
+| `:b {N}` | Switch to buffer number `N` |
+| `:bn` / `:bp` | Next / previous buffer |
+| `Ctrl-^` (`Ctrl-6`) | Toggle between the two most recent buffers |
+| `:bd` | Close (delete) the current buffer |
+| `gt` / `gT` | Next / previous **tab** page |
+| `Ctrl-w w` | Cycle between split windows |
+
+`Ctrl-^` is the fastest "jump back to the file I was just in" toggle.
+
+### Fuzzy-find the right file to open
+
+Vim has no built-in fuzzy finder, but two options cover it:
+
+**Built-in `:find` with a wildcard path:**
+
+```vim
+:set path+=**          " search all subdirectories
+:find part_of_name     " Tab / Ctrl-d to complete; * matches anywhere
+:b *word*              " fuzzy-ish switch among open buffers
+```
+
+**Fuzzy finder plugins (recommended for real projects):**
+
+```vim
+" fzf.vim
+:Files                 " fuzzy-find any file in the project
+:Buffers               " fuzzy-find among open buffers
+:Rg pattern            " fuzzy-search file contents (ripgrep)
+
+" telescope.nvim (Neovim)
+:Telescope find_files
+:Telescope buffers
+:Telescope live_grep
+```
+
+Common key mappings people set: `Ctrl-p` → files, `<leader>b` → buffers.
+
+---
+
 ## Delete Line, Insert Line, Copy Lines
 
 ### Deleting
