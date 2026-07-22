@@ -241,14 +241,39 @@ Common mapping: `nnoremap <C-p> :Files<CR>` (or `:Telescope find_files<CR>`), so
 
 ## Converting This Sheet to PDF
 
+**With the Nix flake in this repo** (works on WSL, Linux, macOS — no manual LaTeX setup):
+
 ```sh
-# with pandoc (recommended)
+nix develop               # shell with pandoc + xelatex + fonts
+
 pandoc vim-cheat-sheet.md -o vim-cheat-sheet.pdf \
+  --pdf-engine=xelatex \
+  -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" \
   -V geometry:margin=1.5cm -V fontsize=10pt
 
-# two-column landscape for a denser printout
+# landscape with tight margins for a denser printout:
 pandoc vim-cheat-sheet.md -o vim-cheat-sheet.pdf \
-  -V geometry:landscape,margin=1cm -V classoption=twocolumn -V fontsize=9pt
+  --pdf-engine=xelatex \
+  -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" \
+  -V geometry:landscape,margin=1cm -V fontsize=9pt
 ```
 
-Alternatives: open the file in VS Code and use a "Markdown PDF" extension, or `grip vim-cheat-sheet.md` and print from the browser.
+If flakes aren't enabled yet, either add `experimental-features = nix-command flakes`
+to `~/.config/nix/nix.conf`, or prefix once:
+`nix --experimental-features 'nix-command flakes' build`.
+
+**Without Nix** (Debian/Ubuntu/WSL):
+
+```sh
+sudo apt install pandoc texlive-xetex texlive-fonts-recommended fonts-dejavu
+
+pandoc vim-cheat-sheet.md -o vim-cheat-sheet.pdf \
+  --pdf-engine=xelatex \
+  -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" \
+  -V geometry:margin=1.5cm -V fontsize=10pt
+```
+
+Note: use `--pdf-engine=xelatex` (not the default `pdflatex`) — this sheet contains
+Unicode characters (`→`, `↔`, `…`) that pdflatex cannot handle.
+
+Alternatives without LaTeX: open the file in VS Code and use a "Markdown PDF" extension, or `grip vim-cheat-sheet.md` and print from the browser.
