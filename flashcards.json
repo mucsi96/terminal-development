@@ -1,0 +1,284 @@
+[
+  {
+    "id": "nav-01",
+    "category": "Basic Navigation",
+    "frontText": "Move the cursor left, down, up and right without arrow keys",
+    "backText": "```\nh  j  k  l\n```\n\n`h` left, `j` down, `k` up, `l` right. Keeping your fingers on the home row is the foundation of Vim speed.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
+  },
+  {
+    "id": "nav-02",
+    "category": "Basic Navigation",
+    "frontText": "Jump to the start of the **next** / **previous** word",
+    "backText": "```\nw    next word start\nb    previous word start\ne    end of current/next word\n```\n\nPrefix with a count: `3w` jumps three words forward. Capital `W`/`B`/`E` treat punctuation as part of the word (WORD motions).\n\n[Word motions](https://vimhelp.org/motion.txt.html#word-motions)"
+  },
+  {
+    "id": "nav-03",
+    "category": "Basic Navigation",
+    "frontText": "Jump to the **start** of the line, the **first non-blank** character, and the **end** of the line",
+    "backText": "```\n0    column 0\n^    first non-blank character\n$    end of line\n```\n\n`^` is usually what you want when editing indented code.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
+  },
+  {
+    "id": "nav-04",
+    "category": "Basic Navigation",
+    "frontText": "Jump to the **first** / **last** line of the file, and to line **42**",
+    "backText": "```\ngg     first line\nG      last line\n42G    line 42   (or :42)\n```\n\nAny count before `G` jumps to that absolute line number.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+  },
+  {
+    "id": "nav-05",
+    "category": "Basic Navigation",
+    "frontText": "Jump to the **previous** / **next** empty line (paragraph boundary)",
+    "backText": "```\n{    previous empty line\n}    next empty line\n```\n\nGreat for hopping between functions or code blocks separated by blank lines.\n\n[Object motions](https://vimhelp.org/motion.txt.html#object-motions)"
+  },
+  {
+    "id": "nav-06",
+    "category": "Basic Navigation",
+    "frontText": "Scroll **half a page** down / up, and a **full page** down / up",
+    "backText": "```\nCtrl-d   half page down\nCtrl-u   half page up\nCtrl-f   full page down\nCtrl-b   full page up\n```\n\nHalf-page scrolling (`Ctrl-d`/`Ctrl-u`) keeps more visual context than full-page jumps.\n\n[Scrolling](https://vimhelp.org/scroll.txt.html)"
+  },
+  {
+    "id": "nav-07",
+    "category": "Basic Navigation",
+    "frontText": "Move the cursor to the **top**, **middle** and **bottom** of the visible screen, and **center** the current line",
+    "backText": "```\nH    top of screen (High)\nM    middle of screen\nL    bottom of screen (Low)\nzz   center current line on screen\n```\n\n`zt` and `zb` scroll the current line to the top / bottom instead.\n\n[Various motions](https://vimhelp.org/motion.txt.html#various-motions)"
+  },
+  {
+    "id": "nav-08",
+    "category": "Basic Navigation",
+    "frontText": "Jump to the next occurrence of the character `x` **within the current line**, then repeat the jump",
+    "backText": "```\nfx   jump onto next 'x'\nFx   jump onto previous 'x'\ntx   jump just before next 'x'\n;    repeat last f/F/t/T\n,    repeat in opposite direction\n```\n\nCombines with operators: `dfx` deletes up to and including the next `x`.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
+  },
+  {
+    "id": "nav-09",
+    "category": "Basic Navigation",
+    "frontText": "Jump **back** to where you were before the last jump, then **forward** again",
+    "backText": "```\nCtrl-o   older position in jump list\nCtrl-i   newer position in jump list\n`.       jump to position of last edit\n```\n\nSearches, `G`, `gg`, `%` etc. all record entries in the jump list, so `Ctrl-o` is the universal \"take me back\".\n\n[Jump motions](https://vimhelp.org/motion.txt.html#jump-motions)"
+  },
+  {
+    "id": "line-01",
+    "category": "Line Operations",
+    "frontText": "Delete (cut) the current line / **3** lines / from cursor to **end of line**",
+    "backText": "```\ndd    delete current line\n3dd   delete 3 lines\nD     delete from cursor to end of line\n```\n\nDeleted text goes into the unnamed register, so a following `p` pastes it — `dd` + `p` moves a line.\n\n[Deleting text](https://vimhelp.org/change.txt.html#deleting)"
+  },
+  {
+    "id": "line-02",
+    "category": "Line Operations",
+    "frontText": "Insert a new line **below** / **above** the current line and start typing",
+    "backText": "```\no    open line below, enter Insert mode\nO    open line above, enter Insert mode\n```\n\nBoth respect auto-indentation of the surrounding code.\n\n[Inserting text](https://vimhelp.org/insert.txt.html)"
+  },
+  {
+    "id": "line-03",
+    "category": "Line Operations",
+    "frontText": "Copy (yank) the current line and paste it **below** / **above**",
+    "backText": "```\nyy   yank current line   (3yy yanks 3 lines)\np    paste below current line\nP    paste above current line\n```\n\n`yyp` duplicates the current line.\n\n[Copying and moving text](https://vimhelp.org/change.txt.html#copy-move)"
+  },
+  {
+    "id": "line-04",
+    "category": "Line Operations",
+    "frontText": "Select several lines, **copy** them, and insert them **after another line**",
+    "backText": "```\nV        start line-wise Visual mode\nj / k    extend the selection\ny        yank the selection\n(move to target line)\np        paste the copied lines below it\n```\n\nUse `d` instead of `y` to **move** the lines instead of copying.\n\n[Visual mode](https://vimhelp.org/visual.txt.html)"
+  },
+  {
+    "id": "line-05",
+    "category": "Line Operations",
+    "frontText": "Copy lines **5–9** after line **20**, and move lines **5–9** after line **20** — without Visual mode",
+    "backText": "```vim\n:5,9t20    copy (transfer) lines 5-9 after line 20\n:5,9m20    move lines 5-9 after line 20\n```\n\n`:t` and `:m` take any range; `.` means current line, `$` last line — e.g. `:.,+3t$` copies the current 4 lines to the end of the file.\n\n[:copy and :move](https://vimhelp.org/change.txt.html#copy-move)"
+  },
+  {
+    "id": "line-06",
+    "category": "Line Operations",
+    "frontText": "Join the line below onto the end of the current line",
+    "backText": "```\nJ     join with one space between\ngJ    join without inserting a space\n```\n\nA count works too: `3J` joins three lines into one.\n\n[Simple changes](https://vimhelp.org/change.txt.html#simple-change)"
+  },
+  {
+    "id": "multi-01",
+    "category": "Multi-Cursor Editing",
+    "frontText": "Change **every occurrence** of the word under the cursor, one by one, confirming each (native \"multi-cursor\")",
+    "backText": "```\n*      search for word under cursor\ncgn    change the next match\n(type replacement) Esc\n.      apply the same change to the next match\nn      skip a match without changing it\n```\n\n`gn` selects the next search match, so `cgn` + `.` replays the change match-by-match — Vim's plugin-free answer to multiple cursors.\n\n[gn](https://vimhelp.org/visual.txt.html#gn)"
+  },
+  {
+    "id": "multi-02",
+    "category": "Multi-Cursor Editing",
+    "frontText": "Search for the **word under the cursor** forward / backward",
+    "backText": "```\n*    search forward for word under cursor\n#    search backward for word under cursor\n```\n\nMatches whole words only (`\\<word\\>`). Use `g*` / `g#` for partial-word matches. `n` / `N` step through the results.\n\n[Search commands](https://vimhelp.org/pattern.txt.html#search-commands)"
+  },
+  {
+    "id": "block-01",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "Start a **column (block) selection** and extend it",
+    "backText": "```\nCtrl-v         start Visual Block mode\nh j k l        extend the block\nfx  /  $       extend to a char / to line ends\n```\n\nVisual Block selects a rectangle of text instead of whole lines — the basis for all column editing.\n\n[Visual Block mode](https://vimhelp.org/visual.txt.html#visual-block)"
+  },
+  {
+    "id": "block-02",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "Insert the same text at the **beginning of many lines at once** (e.g. comment out a block with `// `)",
+    "backText": "```\nCtrl-v     start block selection in column 0\nj j j      extend down over the lines\nI// Esc    insert '// ' at the left edge of every line\n```\n\nThe inserted text appears on all selected lines the moment you press `Esc`. Use `A` instead of `I` to append at the right edge of the block.\n\n[Blockwise insert](https://vimhelp.org/visual.txt.html#v_b_I)"
+  },
+  {
+    "id": "block-03",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "Append text at the **end of multiple lines** even when the lines have different lengths",
+    "backText": "```\nCtrl-v     start block selection\nj j j      extend down\n$          extend the block to each line's own end\nA;  Esc    append ';' at the end of every line\n```\n\nThe `$` makes the block \"ragged right\", so `A` appends at each line's actual end instead of a fixed column.\n\n[Blockwise append](https://vimhelp.org/visual.txt.html#v_b_A)"
+  },
+  {
+    "id": "block-04",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "**Change** or **delete** a selected column of text on every line",
+    "backText": "```\nCtrl-v + motions   select the block\nc  (new text) Esc  replace block on every line\nd  or  x           delete the column\nrx                 replace every selected char with 'x'\n```\n\nWith `c`, you type the replacement once and it is applied to all lines on `Esc`.\n\n[Visual operators](https://vimhelp.org/visual.txt.html#visual-operators)"
+  },
+  {
+    "id": "block-05",
+    "category": "Visual Block (Column) Editing",
+    "frontText": "Turn a column of identical numbers (e.g. `0`) into an **increasing sequence** (1, 2, 3, …)",
+    "backText": "```\nCtrl-v     select the column of numbers\ng Ctrl-a   increment as a sequence\n```\n\nPlain `Ctrl-a` in Visual mode adds 1 to every number; `g Ctrl-a` adds 1 to the first, 2 to the second, 3 to the third… — instant numbered lists.\n\n[v_g_CTRL-A](https://vimhelp.org/change.txt.html#v_g_CTRL-A)"
+  },
+  {
+    "id": "indent-01",
+    "category": "Indentation",
+    "frontText": "Indent / un-indent the **current line**, and **3 lines**",
+    "backText": "```\n>>    indent current line\n<<    un-indent current line\n3>>   indent 3 lines\n```\n\nThe shift amount is controlled by the `shiftwidth` option.\n\n[Shifting lines](https://vimhelp.org/change.txt.html#shift-left-right)"
+  },
+  {
+    "id": "indent-02",
+    "category": "Indentation",
+    "frontText": "Indent a **visual selection**, then repeat the indent on the same lines",
+    "backText": "```\nV + j/k    select lines\n>          indent  ( <  un-indents )\ngv         reselect the same lines\n>          indent again   (or just press . )\n```\n\nVisual selections collapse after one shift — `gv` or `.` lets you shift further.\n\n[Shifting lines](https://vimhelp.org/change.txt.html#shift-left-right)"
+  },
+  {
+    "id": "indent-03",
+    "category": "Indentation",
+    "frontText": "**Auto-indent** the current line, a selection, and the **whole file**",
+    "backText": "```\n==      auto-indent current line\n=       auto-indent Visual selection\ngg=G    re-indent the entire file\n```\n\n`=` applies the indent rules of the current filetype — the fastest way to fix messy indentation.\n\n[= operator](https://vimhelp.org/change.txt.html#shift-left-right)"
+  },
+  {
+    "id": "indent-04",
+    "category": "Indentation",
+    "frontText": "Indent / un-indent the current line **while typing in Insert mode**",
+    "backText": "```\nCtrl-t    indent one level   (Insert mode)\nCtrl-d    un-indent one level (Insert mode)\n```\n\nWorks anywhere in the line — no need to move to the start or leave Insert mode.\n\n[Insert mode indenting](https://vimhelp.org/insert.txt.html#i_CTRL-T)"
+  },
+  {
+    "id": "indent-05",
+    "category": "Indentation",
+    "frontText": "Configure Vim to indent with **4 spaces instead of tabs**, and convert existing tabs",
+    "backText": "```vim\nset expandtab      \" insert spaces instead of tabs\nset shiftwidth=4   \" width used by >> << =\nset tabstop=4      \" how wide a tab displays\nset softtabstop=4  \" columns the Tab key inserts\n:retab             \" convert existing tabs in the file\n```\n\nPut the `set` lines in `~/.vimrc`; run `:retab` once per file to normalize old content.\n\n['tabstop' and friends](https://vimhelp.org/options.txt.html#%27tabstop%27)"
+  },
+  {
+    "id": "paste-01",
+    "category": "Pasting Code",
+    "frontText": "Paste from / copy to the **system clipboard**",
+    "backText": "```\n\"+p    paste from system clipboard\n\"+y    yank selection to system clipboard\n```\n\nThe `+` register is the OS clipboard (requires clipboard support: any Neovim, or Vim with `+clipboard`). Pasting via `\"+p` never triggers the auto-indent cascade that terminal paste causes.\n\n[Registers](https://vimhelp.org/change.txt.html#registers)"
+  },
+  {
+    "id": "paste-02",
+    "category": "Pasting Code",
+    "frontText": "Paste code from the terminal **without breaking the indentation** (classic Vim without clipboard support)",
+    "backText": "```vim\n:set paste     \" disable auto-indent/mappings\n(paste with the terminal shortcut)\n:set nopaste   \" re-enable\n```\n\nWithout this, each pasted line gets re-indented on top of its own leading whitespace, producing the familiar \"staircase\". Modern Vim/Neovim with bracketed paste usually handles this automatically.\n\n['paste' option](https://vimhelp.org/options.txt.html#%27paste%27)"
+  },
+  {
+    "id": "paste-03",
+    "category": "Pasting Code",
+    "frontText": "Paste a yanked block so that it **matches the indentation** of the current line",
+    "backText": "```\n]p    paste and adjust indent to current line\n```\n\nAlternatively paste normally and re-indent what was just pasted: `` `[v`]= `` (select last pasted text, then auto-indent it).\n\n[]p](https://vimhelp.org/change.txt.html#%5Dp)"
+  },
+  {
+    "id": "paste-04",
+    "category": "Pasting Code",
+    "frontText": "Make `y`, `d` and `p` use the **system clipboard automatically**",
+    "backText": "```vim\nset clipboard=unnamedplus\n```\n\nWith this in `~/.vimrc` every yank/delete lands in the OS clipboard and `p` pastes from it — no `\"+` prefix needed.\n\n['clipboard' option](https://vimhelp.org/options.txt.html#%27clipboard%27)"
+  },
+  {
+    "id": "bracket-01",
+    "category": "Brackets & Text Objects",
+    "frontText": "Jump between a **parenthesis / bracket / brace and its match**",
+    "backText": "```\n%    jump to the matching ( ) [ ] { }\n```\n\nThe cursor may be on the bracket or anywhere before it on the line. Run `:packadd! matchit` (ships with Vim) to make `%` also match HTML tags and `if/endif`-style keywords.\n\n[% motion](https://vimhelp.org/motion.txt.html#various-motions)"
+  },
+  {
+    "id": "bracket-02",
+    "category": "Brackets & Text Objects",
+    "frontText": "Delete / change / copy everything **inside** the parentheses the cursor is in",
+    "backText": "```\ndi(   delete inside ( )\nci(   change inside ( )\nyi(   yank inside ( )\nda(   delete including the parens\n```\n\nSame pattern for other pairs: `i{` `i[` `i\"` `i'` `it` (HTML tag). `i` = inner, `a` = around. Works from anywhere inside the pair.\n\n[Text objects](https://vimhelp.org/motion.txt.html#text-objects)"
+  },
+  {
+    "id": "bracket-03",
+    "category": "Brackets & Text Objects",
+    "frontText": "Visually select the **body of the current code block** (inside `{ }`)",
+    "backText": "```\nvi{   select inside the braces\nva{   select including the braces\n```\n\nRepeating the text object expands outward: `vi{` then `i{` again selects the enclosing block.\n\n[Text objects](https://vimhelp.org/motion.txt.html#text-objects)"
+  },
+  {
+    "id": "bracket-04",
+    "category": "Brackets & Text Objects",
+    "frontText": "Jump to the **beginning / end of the current code block** (the unmatched `{` above / `}` below)",
+    "backText": "```\n[{    previous unmatched {\n]}    next unmatched }\n[(    previous unmatched (\n])    next unmatched )\n```\n\nUseful for jumping to the start of the enclosing function or `if` block.\n\n[Various motions](https://vimhelp.org/motion.txt.html#various-motions)"
+  },
+  {
+    "id": "find-01",
+    "category": "Find & Replace",
+    "frontText": "**Search** for a pattern forward / backward and step through the matches",
+    "backText": "```\n/pattern    search forward\n?pattern    search backward\nn           next match\nN           previous match\n:noh        clear the highlighting\n```\n\nSet `set ignorecase smartcase` to make searches case-insensitive unless the pattern contains a capital.\n\n[Search commands](https://vimhelp.org/pattern.txt.html#search-commands)"
+  },
+  {
+    "id": "find-02",
+    "category": "Find & Replace",
+    "frontText": "Replace **all occurrences** of `old` with `new` in the whole file — and with **confirmation** for each",
+    "backText": "```vim\n:%s/old/new/g     replace all\n:%s/old/new/gc    ask before each (y/n/a/q)\n```\n\n`%` = whole file, `g` = all matches per line, `c` = confirm. During `c`: `y` yes, `n` no, `a` all remaining, `q` quit.\n\n[:substitute](https://vimhelp.org/change.txt.html#%3Asubstitute)"
+  },
+  {
+    "id": "find-03",
+    "category": "Find & Replace",
+    "frontText": "Replace only **within lines 5–20**, and only **within the visual selection**",
+    "backText": "```vim\n:5,20s/old/new/g      lines 5-20 only\n:'<,'>s/old/new/g     visual selection only\n```\n\nSelect with `V` first — pressing `:` then automatically inserts the `'<,'>` range for you.\n\n[:substitute ranges](https://vimhelp.org/change.txt.html#%3Asubstitute)"
+  },
+  {
+    "id": "find-04",
+    "category": "Find & Replace",
+    "frontText": "Replace only **whole-word** matches of `old` (don't touch `older` or `bold`)",
+    "backText": "```vim\n:%s/\\<old\\>/new/g\n```\n\n`\\<` and `\\>` anchor the pattern to word boundaries — the same trick `*` uses when searching the word under the cursor.\n\n[Pattern atoms](https://vimhelp.org/pattern.txt.html#%2F%5C%3C)"
+  },
+  {
+    "id": "find-05",
+    "category": "Find & Replace",
+    "frontText": "Search for a pattern **across the whole project** and browse the matches",
+    "backText": "```vim\n:grep -r 'old' src/       \" external grep\n:vimgrep /old/ **/*.js    \" built-in grep\n:copen                    \" open match list (quickfix)\n:cnext  /  :cprev         \" jump between matches\n```\n\nBoth fill the quickfix list. Tip: `set grepprg=rg\\ --vimgrep` makes `:grep` use ripgrep.\n\n[Quickfix](https://vimhelp.org/quickfix.txt.html)"
+  },
+  {
+    "id": "find-06",
+    "category": "Find & Replace",
+    "frontText": "**Find and replace across every file in the project**",
+    "backText": "```vim\n:grep -r 'old' src/\n:cfdo %s/old/new/g | update\n```\n\n`:cfdo` runs the substitution in **every file** that has a quickfix match; `| update` saves each changed file. Review the hits with `:copen` before pulling the trigger.\n\n[:cfdo](https://vimhelp.org/quickfix.txt.html#%3Acfdo)"
+  },
+  {
+    "id": "rename-01",
+    "category": "Rename Variable",
+    "frontText": "Rename a variable in the **whole file** without retyping its (possibly long) name",
+    "backText": "```\n*                 search word under cursor\n:%s//newName/g    substitute the last search\n```\n\nAn **empty pattern** in `:s//` reuses the last search — and `*` already added whole-word anchors, so `count` won't match `counter`.\n\n[:substitute](https://vimhelp.org/change.txt.html#%3Asubstitute)"
+  },
+  {
+    "id": "rename-02",
+    "category": "Rename Variable",
+    "frontText": "Rename a variable **only inside the current function** (stock Vim, no LSP)",
+    "backText": "```\ngd     go to the variable's local definition\n[{     jump to the enclosing block start\nV%     select the whole block\n:s/\\<old\\>/new/g\n```\n\n`gd` finds the declaration in the current scope; selecting the function body first confines the substitute to that range.\n\n[gd](https://vimhelp.org/pattern.txt.html#gd)"
+  },
+  {
+    "id": "file-01",
+    "category": "File Switching",
+    "frontText": "**Toggle between the two files** you're editing most",
+    "backText": "```\nCtrl-^    (Ctrl-6) switch to the alternate file\n```\n\nThe \"alternate\" file is the previously edited buffer — pressing it repeatedly bounces between two files, perfect for code + test.\n\n[Alternate file](https://vimhelp.org/editing.txt.html#CTRL-%5E)"
+  },
+  {
+    "id": "file-02",
+    "category": "File Switching",
+    "frontText": "List the open buffers and **switch to one by partial name**",
+    "backText": "```vim\n:ls           \" list open buffers\n:b part<Tab>  \" switch by partial name, Tab cycles\n:bn  /  :bp   \" next / previous buffer\n:bd           \" close (delete) current buffer\n```\n\n`:b` matches any substring of the buffer name — `:b ctrl` can jump straight to `user_controller.js`.\n\n[Buffer list](https://vimhelp.org/windows.txt.html#buffer-list)"
+  },
+  {
+    "id": "file-03",
+    "category": "File Switching",
+    "frontText": "Set up **fuzzy file finding in stock Vim** (no plugins) and open a deeply nested file by a few characters of its name",
+    "backText": "```vim\n\" in ~/.vimrc\nset path+=**           \" :find searches recursively\nset wildmenu           \" visual completion menu\nset wildoptions=fuzzy  \" fuzzy matching (Vim 9 / Neovim)\n\n\" then:\n:find usrctl<Tab>      \" matches src/user_controller.js\n```\n\n`:find` looks through every directory in `path`; with `**` that's the whole project tree, and fuzzy wildmenu matching makes it behave like a lightweight fuzzy finder.\n\n[:find](https://vimhelp.org/editing.txt.html#%3Afind)"
+  },
+  {
+    "id": "file-04",
+    "category": "File Switching",
+    "frontText": "Open a file by path, with completion",
+    "backText": "```vim\n:e path/to/file<Tab>\n```\n\n`:e` (`:edit`) opens a file; `Tab` completes directories and names (with `wildmenu` you get a visual menu). `:e!` reloads the current file, discarding changes.\n\n[:edit](https://vimhelp.org/editing.txt.html#%3Aedit)"
+  }
+]
