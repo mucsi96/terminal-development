@@ -58,7 +58,7 @@ See the bottom of [vim-cheat-sheet.md](vim-cheat-sheet.md) for non-Nix alternati
 
 | Category | Cards |
 | --- | --- |
-| Basic Navigation | 29 |
+| Basic Navigation | 34 |
 | Line Operations | 12 |
 | Multi-Cursor Editing | 4 |
 | Visual Block (Column) Editing | 8 |
@@ -68,7 +68,7 @@ See the bottom of [vim-cheat-sheet.md](vim-cheat-sheet.md) for non-Nix alternati
 | Find & Replace | 14 |
 | Rename Variable | 2 |
 | File Switching | 10 |
-| **Total** | **102** |
+| **Total** | **107** |
 
 Expected JSON schema:
 

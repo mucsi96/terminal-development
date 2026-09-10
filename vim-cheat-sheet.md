@@ -9,12 +9,14 @@
 
 | Key | Action |
 |---|---|
-| `h` `j` `k` `l` | Left, down, up, right |
-| `w` / `b` | Next / previous word start |
+| `h` `j` `k` `l` | Left, down, up, right (hold a key to repeat) |
+| `w` / `b` | Next / previous word start (punctuation is a boundary) |
+| `W` / `B` | Next / previous WORD (whitespace is the boundary) |
 | `e` | End of word |
 | `0` / `^` / `$` | Line start / first non-blank / line end |
-| `gg` / `G` | First / last line of file |
-| `42G` or `:42` | Jump to line 42 |
+| `gg` (or `1gg`) / `G` (or `$G`) | First / last line of file |
+| `42G`, `42gg`, or `:42` | Jump to line 42 |
+| `:$` | Jump to the last line using Command-line mode |
 | `{` / `}` | Previous / next empty line (paragraph) |
 | `Ctrl-d` / `Ctrl-u` | Scroll half page down / up |
 | `Ctrl-f` / `Ctrl-b` | Scroll full page down / up |
