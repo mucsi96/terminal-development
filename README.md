@@ -56,19 +56,14 @@ See the bottom of [vim-cheat-sheet.md](vim-cheat-sheet.md) for non-Nix alternati
 
 ## Status
 
+The active deck follows progress through Vim Masterclass on Coursera. Currently it contains only the commands covered in `~/Vim-Masterclass/nav.txt`, including `h`, `j`, `k`, and `l`.
+
+Add cards as further exercises are completed, preserving existing card IDs. Cards for later topics can be restored from Git history when those topics are reached.
+
 | Category | Cards |
 | --- | --- |
-| Basic Navigation | 34 |
-| Line Operations | 12 |
-| Multi-Cursor Editing | 4 |
-| Visual Block (Column) Editing | 8 |
-| Indentation | 10 |
-| Pasting Code | 5 |
-| Brackets & Text Objects | 8 |
-| Find & Replace | 14 |
-| Rename Variable | 2 |
-| File Switching | 10 |
-| **Total** | **107** |
+| Basic Navigation | 16 |
+| **Total** | **16** |
 
 Expected JSON schema:
 
