@@ -48,22 +48,34 @@ See the bottom of [vim-cheat-sheet.md](vim-cheat-sheet.md) for non-Nix alternati
 ## Files
 
 - **[vim-cheat-sheet.md](vim-cheat-sheet.md)** — printable Vim cheat sheet in markdown, easy to convert to PDF (pandoc commands included at the bottom of the sheet).
-- **[flashcards.json](flashcards.json)** — atomic, game-style flashcards derived from the cheat sheet. Each front is a small concrete challenge (a code snippet, a cursor position, a goal); each card has exactly one answer — a single shortcut or command. Only stock Vim/Neovim commands — cards requiring plugin installation (vim-visual-multi, fzf.vim, Telescope, LSP rename) are intentionally excluded. Each card has:
+- **[flashcards.json](flashcards.json)** — atomic, game-style flashcards derived from the cheat sheet. Each front is a small concrete challenge (a code snippet, a cursor position, a goal); each card tests a single shortcut or command and lists both full and abbreviated spellings wherever Vim provides them. Only stock Vim/Neovim commands — cards requiring plugin installation (vim-visual-multi, fzf.vim, Telescope, LSP rename) are intentionally excluded. Each card has:
   - `frontText` — task description (markdown)
-  - `backText` — Markdown containing one fenced code block with a single Vim command or shortcut, ready to compare with the user's typed answer
+  - `backText` — Markdown containing one fenced code block per accepted command or shortcut spelling, ready to compare with the user's typed answer
   - `category` — the cheat sheet topic the card belongs to
   - `id` — stable unique id
 
 ## Answer format for automated checking
 
-An automated AI-based solution checker compares the user's typed answer with the solution in `backText`. Every card must store a single canonical solution in a Markdown code fence for readable display. The fences are presentation only; the command or shortcut inside is the expected typed answer.
+An automated AI-based solution checker compares the user's typed answer with the accepted solutions in `backText`. Every card tests one operation. Format each accepted spelling in a Markdown code fence for readable display. The fences are presentation only; typing any one listed solution is sufficient.
 
-- Use exactly one fenced code block containing a single nonempty line with only the command or shortcut. Use a `vim` language tag for Ex commands and an untagged fence for shortcuts.
-- Omit explanations, links, alternative answers, annotations, and text outside the code block.
+- Always list both full and abbreviated forms whenever Vim provides them, including compact built-in aliases. Fully expand Ex command names in the first block, then list valid shorter spellings. Preserve previously accepted equivalent spellings.
+- Use a separate fenced code block for each accepted spelling, with a single nonempty line containing only the command or shortcut. These blocks are alternatives, not a sequence of commands; any one answer is valid on its own. Use a `vim` language tag for Ex commands and an untagged fence for shortcuts.
+- Commands without a distinct shorter spelling, such as single-key motions, `Ctrl-d`, and line addresses like `:32` and `:$`, have one canonical fenced answer. Do not invent abbreviations or duplicate answers.
+- Omit explanations, links, unrelated alternative answers, annotations, and text outside the code blocks.
 - For Ex commands, include the leading `:` and any concrete arguments required by the question, for example `:edit src/utils/format.js` or `:cd ~/project`. Pressing Enter to execute the command is implicit; omit `<Enter>` from the answer.
 - Write Ctrl shortcuts as `Ctrl-d`. Separate successive shortcuts with a space, for example `Ctrl-w Ctrl-w`.
 - If a key must be held, put that instruction in `frontText` and store only the key inside the `backText` code block, for example `j`.
 - Keep any supporting context in `frontText` or the cheat sheet.
+
+Examples of accepted full and shorter forms:
+
+| Task | Full form | Accepted shorter forms |
+| --- | --- | --- |
+| Open a file | `:edit src/utils/format.js` | `:e src/utils/format.js` |
+| Change Vim's working directory | `:chdir ~/project` | `:cd ~/project` |
+| Open a terminal split at the bottom | `:botright terminal` | `:botright term`, `:bo term` |
+| Open a terminal split on the right | `:botright vertical terminal` | `:botright vertical term`, `:bo vert ter` |
+| Switch back to code | `Ctrl-w Ctrl-w` | `Ctrl-w w` |
 
 These requirements also apply when restoring cards from Git history. See [AGENTS.md](AGENTS.md) for agent instructions.
 
@@ -86,8 +98,8 @@ Example JSON card:
 [
   {
     "id": "file-07",
-    "frontText": "Open `src/utils/format.js` in the current Vim window. Use the full Ex command name.",
-    "backText": "```vim\n:edit src/utils/format.js\n```",
+    "frontText": "Open `src/utils/format.js` in the current Vim window. Full or abbreviated command names are accepted.",
+    "backText": "```vim\n:edit src/utils/format.js\n```\n\n```vim\n:e src/utils/format.js\n```",
     "category": "File Switching"
   }
 ]
