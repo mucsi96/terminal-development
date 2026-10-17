@@ -50,20 +50,34 @@ See the bottom of [vim-cheat-sheet.md](vim-cheat-sheet.md) for non-Nix alternati
 - **[vim-cheat-sheet.md](vim-cheat-sheet.md)** — printable Vim cheat sheet in markdown, easy to convert to PDF (pandoc commands included at the bottom of the sheet).
 - **[flashcards.json](flashcards.json)** — atomic, game-style flashcards derived from the cheat sheet. Each front is a small concrete challenge (a code snippet, a cursor position, a goal); each card has exactly one answer — a single shortcut or command. Only stock Vim/Neovim commands — cards requiring plugin installation (vim-visual-multi, fzf.vim, Telescope, LSP rename) are intentionally excluded. Each card has:
   - `frontText` — task description (markdown)
-  - `backText` — the keys/command to use, a short description, and a link to the Vim reference docs (markdown)
+  - `backText` — exactly one plain-text Vim command or shortcut, ready to compare with the user's typed answer
   - `category` — the cheat sheet topic the card belongs to
   - `id` — stable unique id
 
+## Answer format for automated checking
+
+An automated AI-based solution checker compares the user's typed answer with `backText`. Every card must therefore store a single canonical solution in `backText`:
+
+- Use one plain-text line containing only the command or shortcut. Omit Markdown, code fences, explanations, links, and alternative answers.
+- For Ex commands, include the leading `:` and any concrete arguments required by the question, for example `:edit src/utils/format.js` or `:cd ~/project`. Pressing Enter to execute the command is implicit; omit `<Enter>` from the answer.
+- Write Ctrl shortcuts as `Ctrl-d`. Separate successive shortcuts with a space, for example `Ctrl-w Ctrl-w`.
+- If a key must be held, put that instruction in `frontText` and store only the key in `backText`, for example `j`.
+- Keep any supporting context in `frontText` or the cheat sheet.
+
+These requirements also apply when restoring cards from Git history. See [AGENTS.md](AGENTS.md) for agent instructions.
+
 ## Status
 
-The active deck follows progress through Vim Masterclass on Coursera. Currently it contains only the commands covered in `~/Vim-Masterclass/nav.txt`, including `h`, `j`, `k`, and `l`.
+The active deck follows progress through Vim Masterclass on Coursera. Currently it covers the navigation commands in `~/Vim-Masterclass/nav.txt`, half-screen scrolling, opening files, changing Vim's working directory, and using the built-in terminal.
 
 Add cards as further exercises are completed, preserving existing card IDs. Cards for later topics can be restored from Git history when those topics are reached.
 
 | Category | Cards |
 | --- | --- |
-| Basic Navigation | 16 |
-| **Total** | **16** |
+| Basic Navigation | 18 |
+| File Switching | 2 |
+| Terminal | 3 |
+| **Total** | **23** |
 
 Expected JSON schema:
 
@@ -72,7 +86,7 @@ Expected JSON schema:
   {
     "id": "Stable unique id (required)",
     "frontText": "Question (Markdown)",
-    "backText": "Answer (Markdown)",
+    "backText": "One plain-text Vim command or shortcut (required)",
     "category": "Optional category"
   }
 ]
