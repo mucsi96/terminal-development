@@ -3,96 +3,138 @@
     "id": "nav-01",
     "category": "Basic Navigation",
     "frontText": "Move one character left. Which key?\n\n```\ncat\n ●\n←┘\n```",
-    "backText": "```\nh\n```\n\nLeft in the `h j k l` cluster. Hold it to keep moving.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
+    "backText": "h"
   },
   {
     "id": "nav-02",
     "category": "Basic Navigation",
     "frontText": "Move down one line. Which key?\n\n```\none\n ●\n ↓\ntwo\n```",
-    "backText": "```\nj\n```\n\nDown. Hold `j` to repeat the movement.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+    "backText": "j"
   },
   {
     "id": "nav-03",
     "category": "Basic Navigation",
     "frontText": "Move up one line. Which key?\n\n```\none\n ↑\n ●\ntwo\n```",
-    "backText": "```\nk\n```\n\nUp. Hold `k` to repeat the movement.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+    "backText": "k"
   },
   {
     "id": "nav-04",
     "category": "Basic Navigation",
     "frontText": "Move one character right. Which key?\n\n```\ncat\n ●\n └→\n```",
-    "backText": "```\nl\n```\n\nRight in the `h j k l` cluster. Hold it to keep moving.\n\n[Left-right motions](https://vimhelp.org/motion.txt.html#left-right-motions)"
+    "backText": "l"
   },
   {
     "id": "nav-05",
     "category": "Basic Navigation",
     "frontText": "Jump to the next word start. Which key?\n\n```\nconst userName\n●─────→\n```",
-    "backText": "```\nw\n```\n\nJumps to the start of the next word. Takes a count: `3w` jumps three words.\n\n[Word motions](https://vimhelp.org/motion.txt.html#word-motions)"
+    "backText": "w"
   },
   {
     "id": "nav-06",
     "category": "Basic Navigation",
     "frontText": "Jump to the previous word start. Which key?\n\n```\nconst userName\n←─────●\n```",
-    "backText": "```\nb\n```\n\nJumps to the start of the previous word — the backward counterpart of `w`.\n\n[Word motions](https://vimhelp.org/motion.txt.html#word-motions)"
+    "backText": "b"
   },
   {
     "id": "nav-11",
     "category": "Basic Navigation",
     "frontText": "Jump straight to the first line.\n\n```\n1    ← target\n│\n●    line 500\n│\nEOF\n```",
-    "backText": "```\ngg\n```\n\n`1gg` and `1G` also go to line 1.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+    "backText": "gg"
   },
   {
     "id": "nav-12",
     "category": "Basic Navigation",
     "frontText": "Jump straight to the last line.\n\n```\n1    ●\n│\n│\nEOF  ← target\n```",
-    "backText": "```\nG\n```\n\n`$G` also reaches the last line, but `G` is shorter.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+    "backText": "G"
   },
   {
     "id": "nav-13",
     "category": "Basic Navigation",
     "frontText": "Jump straight to line 42.\n\n```\n 41\n→42  target\n 43\n```",
-    "backText": "```\n42G\n```\n\n`42gg` and `:42` then `Enter` do the same.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+    "backText": "42G"
+  },
+  {
+    "id": "nav-16",
+    "category": "Basic Navigation",
+    "frontText": "Scroll half a screen down.\n\n```\n┌────────────┐\n│  viewport  │\n└────────────┘\n      ↓ ½\n```",
+    "backText": "Ctrl-d"
+  },
+  {
+    "id": "nav-17",
+    "category": "Basic Navigation",
+    "frontText": "Scroll half a screen up.\n\n```\n      ↑ ½\n┌────────────┐\n│  viewport  │\n└────────────┘\n```",
+    "backText": "Ctrl-u"
   },
   {
     "id": "nav-18",
     "category": "Basic Navigation",
     "frontText": "Scroll one full page forward.\n\n```\n┌── page 1 ──┐\n└────────────┘\n      ↓\n┌── page 2 ──┐\n└────────────┘\n```",
-    "backText": "```\nCtrl-f\n```\n\nHold Ctrl and press `f`: forward, like Page Down.\n\n[Scrolling](https://vimhelp.org/scroll.txt.html)"
+    "backText": "Ctrl-f"
   },
   {
     "id": "nav-19",
     "category": "Basic Navigation",
     "frontText": "Scroll one full page backward.\n\n```\n┌── page 1 ──┐\n└────────────┘\n      ↑\n┌── page 2 ──┐\n└────────────┘\n```",
-    "backText": "```\nCtrl-b\n```\n\nHold Ctrl and press `b`: backward, like Page Up.\n\n[Scrolling](https://vimhelp.org/scroll.txt.html)"
+    "backText": "Ctrl-b"
   },
   {
     "id": "nav-30",
     "category": "Basic Navigation",
     "frontText": "Jump to the next whitespace-separated **WORD**, skipping the punctuation inside `foo.bar`.\n\n```\nfoo.bar   baz\n●─────────→\n```",
-    "backText": "```\nW\n```\n\n`W` treats everything between spaces as one WORD; `w` stops at punctuation.\n\n[WORD motions](https://vimhelp.org/motion.txt.html#WORD)"
+    "backText": "W"
   },
   {
     "id": "nav-31",
     "category": "Basic Navigation",
     "frontText": "Jump back to the previous whitespace-separated **WORD**.\n\n```\nfoo.bar   baz\n←─────────●\n```",
-    "backText": "```\nB\n```\n\n`B` is the backward counterpart of `W`; `b` also stops at punctuation.\n\n[WORD motions](https://vimhelp.org/motion.txt.html#WORD)"
+    "backText": "B"
   },
   {
     "id": "nav-32",
     "category": "Basic Navigation",
     "frontText": "Use Command-line mode to jump to line 32.\n\n```\n 31\n→32  target\n 33\n```",
-    "backText": "```vim\n:32<Enter>\n```\n\nAn Ex line address jumps directly to that line.\n\n[Ex command lines](https://vimhelp.org/cmdline.txt.html#cmdline-lines)"
+    "backText": ":32"
   },
   {
     "id": "nav-33",
     "category": "Basic Navigation",
     "frontText": "Use Command-line mode to jump to the last line.\n\n```\n1\n│\n│\nEOF  ← target\n```",
-    "backText": "```vim\n:$<Enter>\n```\n\nIn an Ex line address, `$` means the last line.\n\n[Ex command lines](https://vimhelp.org/cmdline.txt.html#cmdline-lines)"
+    "backText": ":$"
   },
   {
     "id": "nav-34",
     "category": "Basic Navigation",
-    "frontText": "Move down continuously using keyboard repeat.\n\n```\n● line 1\n│\n│\n▼ line 4\n```",
-    "backText": "```\nhold j\n```\n\nHolding any `h`, `j`, `k`, or `l` key repeats that movement. For long jumps, prefer `gg` or `G`.\n\n[Up-down motions](https://vimhelp.org/motion.txt.html#up-down-motions)"
+    "frontText": "Move down continuously using keyboard repeat. Which key should you hold?\n\n```\n● line 1\n│\n│\n▼ line 4\n```",
+    "backText": "j"
+  },
+  {
+    "id": "file-07",
+    "category": "File Switching",
+    "frontText": "Open `src/utils/format.js` in the current Vim window. Use the full Ex command name.",
+    "backText": ":edit src/utils/format.js"
+  },
+  {
+    "id": "file-11",
+    "category": "File Switching",
+    "frontText": "Change Vim's working directory to `~/project` so relative paths in commands such as `:edit src/main.py` start there.",
+    "backText": ":cd ~/project"
+  },
+  {
+    "id": "term-01",
+    "category": "Terminal",
+    "frontText": "Open a shell in a full-width terminal split at the bottom of Vim.\n\n```\n┌─────────────────┐\n│ code            │\n├─────────────────┤\n│ terminal        │\n└─────────────────┘\n```",
+    "backText": ":botright term"
+  },
+  {
+    "id": "term-02",
+    "category": "Terminal",
+    "frontText": "With only your code and a terminal split open in Vim, switch from the terminal back to your code.\n\n```\n┌─────────────────┐\n│ code  ← target  │\n├─────────────────┤\n│ terminal  ●     │\n└─────────────────┘\n```",
+    "backText": "Ctrl-w Ctrl-w"
+  },
+  {
+    "id": "term-03",
+    "category": "Terminal",
+    "frontText": "Open a shell in a full-height terminal split on the right side of Vim.\n\n```\n┌────────┬──────────┐\n│ code   │ terminal │\n│        │          │\n└────────┴──────────┘\n```",
+    "backText": ":botright vertical term"
   }
 ]
