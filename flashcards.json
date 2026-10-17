@@ -110,31 +110,31 @@
   {
     "id": "file-07",
     "category": "File Switching",
-    "frontText": "Open `src/utils/format.js` in the current Vim window. Use the full Ex command name.",
-    "backText": "```vim\n:edit src/utils/format.js\n```"
+    "frontText": "Open `src/utils/format.js` in the current Vim window. Full or abbreviated command names are accepted.",
+    "backText": "```vim\n:edit src/utils/format.js\n```\n\n```vim\n:e src/utils/format.js\n```"
   },
   {
     "id": "file-11",
     "category": "File Switching",
     "frontText": "Change Vim's working directory to `~/project` so relative paths in commands such as `:edit src/main.py` start there.",
-    "backText": "```vim\n:cd ~/project\n```"
+    "backText": "```vim\n:chdir ~/project\n```\n\n```vim\n:cd ~/project\n```"
   },
   {
     "id": "term-01",
     "category": "Terminal",
-    "frontText": "Open a shell in a full-width terminal split at the bottom of Vim.\n\n```\n┌─────────────────┐\n│ code            │\n├─────────────────┤\n│ terminal        │\n└─────────────────┘\n```",
-    "backText": "```vim\n:botright term\n```"
+    "frontText": "Open a shell in a full-width terminal split at the bottom of Vim. Full or abbreviated command names are accepted.\n\n```\n┌─────────────────┐\n│ code            │\n├─────────────────┤\n│ terminal        │\n└─────────────────┘\n```",
+    "backText": "```vim\n:botright terminal\n```\n\n```vim\n:botright term\n```\n\n```vim\n:bo term\n```"
   },
   {
     "id": "term-02",
     "category": "Terminal",
     "frontText": "With only your code and a terminal split open in Vim, switch from the terminal back to your code.\n\n```\n┌─────────────────┐\n│ code  ← target  │\n├─────────────────┤\n│ terminal  ●     │\n└─────────────────┘\n```",
-    "backText": "```\nCtrl-w Ctrl-w\n```"
+    "backText": "```\nCtrl-w Ctrl-w\n```\n\n```\nCtrl-w w\n```"
   },
   {
     "id": "term-03",
     "category": "Terminal",
-    "frontText": "Open a shell in a full-height terminal split on the right side of Vim.\n\n```\n┌────────┬──────────┐\n│ code   │ terminal │\n│        │          │\n└────────┴──────────┘\n```",
-    "backText": "```vim\n:botright vertical term\n```"
+    "frontText": "Open a shell in a full-height terminal split on the right side of Vim. Full or abbreviated command names are accepted.\n\n```\n┌────────┬──────────┐\n│ code   │ terminal │\n│        │          │\n└────────┴──────────┘\n```",
+    "backText": "```vim\n:botright vertical terminal\n```\n\n```vim\n:botright vertical term\n```\n\n```vim\n:bo vert ter\n```"
   }
 ]
