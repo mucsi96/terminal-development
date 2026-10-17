@@ -50,18 +50,19 @@ See the bottom of [vim-cheat-sheet.md](vim-cheat-sheet.md) for non-Nix alternati
 - **[vim-cheat-sheet.md](vim-cheat-sheet.md)** — printable Vim cheat sheet in markdown, easy to convert to PDF (pandoc commands included at the bottom of the sheet).
 - **[flashcards.json](flashcards.json)** — atomic, game-style flashcards derived from the cheat sheet. Each front is a small concrete challenge (a code snippet, a cursor position, a goal); each card has exactly one answer — a single shortcut or command. Only stock Vim/Neovim commands — cards requiring plugin installation (vim-visual-multi, fzf.vim, Telescope, LSP rename) are intentionally excluded. Each card has:
   - `frontText` — task description (markdown)
-  - `backText` — exactly one plain-text Vim command or shortcut, ready to compare with the user's typed answer
+  - `backText` — Markdown containing one fenced code block with a single Vim command or shortcut, ready to compare with the user's typed answer
   - `category` — the cheat sheet topic the card belongs to
   - `id` — stable unique id
 
 ## Answer format for automated checking
 
-An automated AI-based solution checker compares the user's typed answer with `backText`. Every card must therefore store a single canonical solution in `backText`:
+An automated AI-based solution checker compares the user's typed answer with the solution in `backText`. Every card must store a single canonical solution in a Markdown code fence for readable display. The fences are presentation only; the command or shortcut inside is the expected typed answer.
 
-- Use one plain-text line containing only the command or shortcut. Omit Markdown, code fences, explanations, links, and alternative answers.
+- Use exactly one fenced code block containing a single nonempty line with only the command or shortcut. Use a `vim` language tag for Ex commands and an untagged fence for shortcuts.
+- Omit explanations, links, alternative answers, annotations, and text outside the code block.
 - For Ex commands, include the leading `:` and any concrete arguments required by the question, for example `:edit src/utils/format.js` or `:cd ~/project`. Pressing Enter to execute the command is implicit; omit `<Enter>` from the answer.
 - Write Ctrl shortcuts as `Ctrl-d`. Separate successive shortcuts with a space, for example `Ctrl-w Ctrl-w`.
-- If a key must be held, put that instruction in `frontText` and store only the key in `backText`, for example `j`.
+- If a key must be held, put that instruction in `frontText` and store only the key inside the `backText` code block, for example `j`.
 - Keep any supporting context in `frontText` or the cheat sheet.
 
 These requirements also apply when restoring cards from Git history. See [AGENTS.md](AGENTS.md) for agent instructions.
@@ -79,15 +80,15 @@ Add cards as further exercises are completed, preserving existing card IDs. Card
 | Terminal | 3 |
 | **Total** | **23** |
 
-Expected JSON schema:
+Example JSON card:
 
 ```json
 [
   {
-    "id": "Stable unique id (required)",
-    "frontText": "Question (Markdown)",
-    "backText": "One plain-text Vim command or shortcut (required)",
-    "category": "Optional category"
+    "id": "file-07",
+    "frontText": "Open `src/utils/format.js` in the current Vim window. Use the full Ex command name.",
+    "backText": "```vim\n:edit src/utils/format.js\n```",
+    "category": "File Switching"
   }
 ]
 ```
